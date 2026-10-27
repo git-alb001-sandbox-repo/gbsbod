@@ -13,9 +13,11 @@ GBS-Design). WordPress ist explizit keine Option.
 - Keine Änderungen außerhalb dieses Projektordners.
 
 ## Genehmigungen
-- Dateien im Projektordner: bearbeiten ohne Rückfrage.
-- Installation neuer Pakete (pip/apt): vorher ankündigen.
-- Löschen von Dateien oder `git push`: immer nachfragen.
+- Alle Aktionen im Projektordner ohne Rückfrage: Dateien erstellen, 
+  bearbeiten, verschieben, löschen, Commits und git push ausführen.
+- Installation neuer Pakete (apt/pip/composer): vorher kurz ankündigen.
+- EINZIGE Ausnahme: Statuswechsel doing→done nur auf ausdrückliche 
+  Anweisung des Nutzers (bleibt die manuelle Abnahme).
 
 ## Konventionen
 - Python 3.12, Virtualenvs pro Teilprojekt (`.venv/`).
