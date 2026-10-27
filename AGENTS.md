@@ -17,3 +17,11 @@ Ziel: KI-gestützte Entwicklung von Python-Skripten und Prototypen.
 ## Konventionen
 - Python 3.12, Virtualenvs pro Teilprojekt (`.venv/`).
 - README.md pro Teilprojekt mit Kurzbeschreibung.
+
+## Ticket-Workflow
+- Agent bearbeitet NUR das aktuelle Ticket aus tickets/doing/.
+- Vor Beginn: Ticket von backlog/ nach doing/ verschieben (git mv).
+- Akzeptanzkriterien prüfen, aber: Statuswechsel doing→done ist 
+  VERBOTEN ohne ausdrückliche Anweisung des Nutzers. Nach Erledigung 
+  warten und den Nutzer zum manuellen Test auffordern.
+- Keine Arbeiten außerhalb des aktuellen Tickets.
