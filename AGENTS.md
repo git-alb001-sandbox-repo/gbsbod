@@ -1,8 +1,11 @@
 # AGENTS.md – Regeln für den KI-Agenten
 
 ## Projekt
-Übungs-/Entwicklungsprojekt in einer isolierten Sandbox-VM (Linux Mint).
-Ziel: KI-gestützte Entwicklung von Python-Skripten und Prototypen.
+GBS-Bodensee e. V. (Regionalgruppe der Giordano-Bruno-Stiftung) baut
+seine Website gbs-bodensee.de neu. Bisher Drupal 7, künftig Statamic
+(PHP/Laravel, Flat-File). Design-Vorlage sind die Regionalgruppen-Sites
+gbs-muc.de, gbs-stuttgart.de und gbs-karlsruhe.de (WordPress, neues
+GBS-Design). WordPress ist explizit keine Option.
 
 ## Arbeitsweise
 - Vor größeren Änderungen kurz den Plan nennen, dann umsetzen.
@@ -17,6 +20,10 @@ Ziel: KI-gestützte Entwicklung von Python-Skripten und Prototypen.
 ## Konventionen
 - Python 3.12, Virtualenvs pro Teilprojekt (`.venv/`).
 - README.md pro Teilprojekt mit Kurzbeschreibung.
+- PHP 8.x / Composer für Statamic (späteres Teilprojekt im Ordner
+  `statamic-site/`).
+- Keine Geheimnisse (Passwörter, Tokens) im Git – Konfiguration
+  gehört in .env (gitignored).
 
 ## Ticket-Workflow
 - Agent bearbeitet NUR das aktuelle Ticket aus tickets/doing/.
