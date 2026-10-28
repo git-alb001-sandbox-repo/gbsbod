@@ -140,35 +140,38 @@ img {
     transition: min-height 0.25s ease;
 }
 
+/* Zweizeilig, weil das echte Logo ein breites Wortmarken-Banner
+   (836×64) ist: Logo oben, Menü + Spenden-Button unten */
 .site-header-inner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    min-height: var(--header-height);
+    gap: 10px 20px;
     padding-block: 14px;
-    transition: min-height 0.25s ease;
 }
 
-/* Verkleinerter Header beim Scrollen (Logo 100 → 70 px) */
 .site-header.is-sticky .site-header-inner {
-    min-height: 115px;
+    padding-block: 8px;
 }
 
+/* Logo (Wortmarken-Banner, 836×64): normal 64 px, sticky 42 px */
 .site-logo img {
     display: block;
-    height: 100px;
+    height: 64px;
     width: auto;
     transition: height 0.25s ease;
 }
 
 .site-header.is-sticky .site-logo img {
-    height: 70px;
+    height: 42px;
 }
 
 .site-header-nav-wrap {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex: 1 1 100%;
     gap: 32px;
 }
 
@@ -264,7 +267,7 @@ img {
 
 .site-footer-logo img {
     display: block;
-    height: 80px;
+    height: 44px;
     width: auto;
 }
 
@@ -373,21 +376,12 @@ img {
 }
 
 @media (max-width: 767px) {
-    .site-header-inner {
-        min-height: 100px;
-        padding-block: 10px;
-    }
-
-    .site-header.is-sticky .site-header-inner {
-        min-height: 80px;
-    }
-
     .site-logo img {
-        height: 70px;
+        height: 48px;
     }
 
     .site-header.is-sticky .site-logo img {
-        height: 56px;
+        height: 34px;
     }
 
     .donate-button {
@@ -409,7 +403,7 @@ img {
     }
 
     .site-footer-logo img {
-        height: 60px;
+        height: 36px;
     }
 }
 
