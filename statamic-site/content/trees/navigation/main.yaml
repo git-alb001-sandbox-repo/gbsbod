@@ -1,0 +1,16 @@
+tree:
+  -
+    title: Home
+    url: /
+  -
+    title: Aktuelles
+    url: /aktuelles
+  -
+    title: Termine
+    url: /termine
+  -
+    title: Kontakt
+    url: /kontakt
+  -
+    title: Impressum/Datenschutz
+    url: /impressum

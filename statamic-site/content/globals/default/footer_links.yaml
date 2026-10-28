@@ -1,10 +1,13 @@
 links:
   -
+    type: link
     label: Datenschutz
     url: /datenschutz
   -
+    type: link
     label: Impressum
     url: /impressum
   -
+    type: link
     label: 'Die GBS (Stiftung)'
     url: 'https://www.giordano-bruno-stiftung.de/'

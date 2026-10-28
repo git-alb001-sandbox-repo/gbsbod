@@ -1,4 +1,426 @@
+/**
+ * GBS-Bodensee e. V. – CSS-Fundament (TICKET-006)
+ * Basis: Design-Tokens aus tokens.css (docs/design-inventur.md)
+ */
+
 @import "./tokens.css";
-@import "tailwindcss";
-@source "../views";
-@source "../../content";
+
+/* ------------------------------------------------------------------ */
+/* Fonts (selbst gehostet, OFL; Quelle: Google Fonts, Bitter + Epilogue) */
+/* ------------------------------------------------------------------ */
+
+/* Bitter Medium (500) */
+@font-face {
+    font-family: "Bitter";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../fonts/Bitter-500-latinext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "Bitter";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../fonts/Bitter-500-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Bitter SemiBold (600) */
+@font-face {
+    font-family: "Bitter";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/Bitter-600-latinext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "Bitter";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/Bitter-600-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Epilogue Bold (700) */
+@font-face {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/Epilogue-700-latinext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/Epilogue-700-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ------------------------------------------------------------------ */
+/* Basis-Typografie                                                    */
+/* ------------------------------------------------------------------ */
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: var(--font-body-weight);
+    font-size: var(--size-body);
+    line-height: 1.7;
+    color: var(--color-text-base);
+    background-color: var(--color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-text-dark);
+    margin: 0 0 0.6em;
+}
+
+h1 { font-size: var(--size-h1); }
+h2 { font-size: var(--size-h2); }
+h3 { font-size: var(--size-h3); }
+
+p { margin: 0 0 1.2em; }
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--color-accent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout: Container                                                   */
+/* ------------------------------------------------------------------ */
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: 20px;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.site-main {
+    min-height: 50vh;
+}
+
+/* ------------------------------------------------------------------ */
+/* Header (sticky)                                                     */
+/* ------------------------------------------------------------------ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-primary);
+    transition: min-height 0.25s ease;
+}
+
+.site-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: var(--header-height);
+    padding-block: 14px;
+    transition: min-height 0.25s ease;
+}
+
+/* Verkleinerter Header beim Scrollen (Logo 100 → 70 px) */
+.site-header.is-sticky .site-header-inner {
+    min-height: 115px;
+}
+
+.site-logo img {
+    display: block;
+    height: 100px;
+    width: auto;
+    transition: height 0.25s ease;
+}
+
+.site-header.is-sticky .site-logo img {
+    height: 70px;
+}
+
+.site-header-nav-wrap {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* Hauptmenü: transparent auf dem Petrol-Banner */
+.main-nav {
+    background: transparent;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item a {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--size-body);
+    letter-spacing: 0.03em;
+    color: #fff;
+    padding-block: 6px;
+}
+
+.nav-item a:hover,
+.nav-item.is-active a {
+    color: var(--color-primary-light);
+}
+
+/* Burger-Button (nur mobil sichtbar) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* Spenden-Button: rund, 150 px, rot, 7° gedreht */
+.donate-button {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--donate-button-size);
+    height: var(--donate-button-size);
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--size-donate-button);
+    text-align: center;
+    transform: rotate(7deg);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.donate-button:hover {
+    transform: rotate(0deg);
+    background-color: #a52c2c;
+    color: #fff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Footer                                                              */
+/* ------------------------------------------------------------------ */
+
+.site-footer {
+    background-color: var(--color-primary-dark);
+    color: #fff;
+    margin-top: 60px;
+}
+
+.site-footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-block: 40px;
+}
+
+.site-footer-logo img {
+    display: block;
+    height: 80px;
+    width: auto;
+}
+
+.footer-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav-item a {
+    color: #fff;
+    font-size: var(--size-body);
+}
+
+.footer-nav-item a:hover {
+    color: var(--color-primary-light);
+}
+
+/* Social-Media-Icons */
+.social-links {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.social-links a:hover {
+    background-color: var(--color-accent);
+}
+
+.social-links svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Breakpoints (Mobile-First; Divi-Standard 479/767/980, breit 1100/1350) */
+/* ------------------------------------------------------------------ */
+
+/* Tablet und kleiner: Burger-Menü */
+@media (max-width: 980px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-primary);
+        display: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .main-nav.is-open {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 10px 20px 20px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-item a {
+        display: block;
+        padding-block: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .site-header-nav-wrap {
+        gap: 16px;
+    }
+
+    .donate-button {
+        width: 110px;
+        height: 110px;
+        font-size: 18px;
+    }
+
+    .site-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-header-inner {
+        min-height: 100px;
+        padding-block: 10px;
+    }
+
+    .site-header.is-sticky .site-header-inner {
+        min-height: 80px;
+    }
+
+    .site-logo img {
+        height: 70px;
+    }
+
+    .site-header.is-sticky .site-logo img {
+        height: 56px;
+    }
+
+    .donate-button {
+        width: 90px;
+        height: 90px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 479px) {
+    .nav-list {
+        font-size: 13px;
+    }
+
+    .donate-button {
+        width: 76px;
+        height: 76px;
+        font-size: 14px;
+    }
+
+    .site-footer-logo img {
+        height: 60px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .nav-list {
+        gap: 36px;
+    }
+}
+
+@media (min-width: 1350px) {
+    .container {
+        padding-inline: 30px;
+    }
+}
