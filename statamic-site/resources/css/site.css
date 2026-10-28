@@ -140,38 +140,36 @@ img {
     transition: min-height 0.25s ease;
 }
 
-/* Zweizeilig, weil das echte Logo ein breites Wortmarken-Banner
-   (836×64) ist: Logo oben, Menü + Spenden-Button unten */
+/* Einzeilig wie in der Design-Vorlage (kompaktes Logo 600×250) */
 .site-header-inner {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 10px 20px;
+    gap: 20px;
+    min-height: var(--header-height);
     padding-block: 14px;
+    transition: min-height 0.25s ease;
 }
 
+/* Verkleinerter Header beim Scrollen (Logo 100 → 70 px) */
 .site-header.is-sticky .site-header-inner {
-    padding-block: 8px;
+    min-height: 115px;
 }
 
-/* Logo (Wortmarken-Banner, 836×64): normal 64 px, sticky 42 px */
 .site-logo img {
     display: block;
-    height: 64px;
+    height: 100px;
     width: auto;
     transition: height 0.25s ease;
 }
 
 .site-header.is-sticky .site-logo img {
-    height: 42px;
+    height: 70px;
 }
 
 .site-header-nav-wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex: 1 1 100%;
     gap: 32px;
 }
 
@@ -267,7 +265,7 @@ img {
 
 .site-footer-logo img {
     display: block;
-    height: 44px;
+    height: 80px;
     width: auto;
 }
 
@@ -376,12 +374,20 @@ img {
 }
 
 @media (max-width: 767px) {
+    .site-header-inner {
+        min-height: 100px;
+    }
+
+    .site-header.is-sticky .site-header-inner {
+        min-height: 80px;
+    }
+
     .site-logo img {
-        height: 48px;
+        height: 70px;
     }
 
     .site-header.is-sticky .site-logo img {
-        height: 34px;
+        height: 50px;
     }
 
     .donate-button {
@@ -403,7 +409,7 @@ img {
     }
 
     .site-footer-logo img {
-        height: 36px;
+        height: 60px;
     }
 }
 
