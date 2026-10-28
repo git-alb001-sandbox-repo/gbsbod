@@ -1,0 +1,29 @@
+title: Termine
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      required: true
+      display: Titel
+  -
+    handle: date
+    field:
+      type: date
+      required: true
+      display: Datum
+  -
+    handle: ort
+    field:
+      type: text
+      display: Ort
+  -
+    handle: teaser
+    field:
+      type: textarea
+      display: Teaser
+  -
+    handle: link
+    field:
+      type: link
+      display: Link

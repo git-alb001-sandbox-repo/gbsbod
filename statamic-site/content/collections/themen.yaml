@@ -1,0 +1,2 @@
+title: Themen
+route: '/themen/{slug}'

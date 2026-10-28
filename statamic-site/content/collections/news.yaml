@@ -1,0 +1,4 @@
+title: News
+route: '/meldung/{slug}'
+date: true
+sort_dir: desc

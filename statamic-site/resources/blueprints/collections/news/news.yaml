@@ -1,0 +1,31 @@
+title: News
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      required: true
+      display: Titel
+  -
+    handle: date
+    field:
+      type: date
+      required: true
+      display: Datum
+  -
+    handle: teaser
+    field:
+      type: textarea
+      display: Teaser
+  -
+    handle: bild
+    field:
+      type: assets
+      display: Bild
+      max_files: 1
+      container: assets
+  -
+    handle: content
+    field:
+      type: markdown
+      display: Inhalt

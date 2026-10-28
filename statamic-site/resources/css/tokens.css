@@ -1,0 +1,54 @@
+/**
+ * Design-Tokens für GBS-Bodensee e. V.
+ * Quelle: docs/design-inventur.md (TICKET-002, Referenz-Sites
+ * gbs-karlsruhe.de, gbs-stuttgart.de, gbs-muc.de)
+ */
+
+:root {
+  /* Farben */
+  --color-primary: #006879;        /* Petrol: Slider-Titel, Header-/Section-Hintergründe */
+  --color-primary-light: #D3EFEF;  /* Hell-Petrol: Slider-Pfeile */
+  --color-primary-mid: #7EBEC5;    /* Mittel-Petrol: sekundäre Akzente */
+  --color-primary-dark: #00282E;   /* Dunkles Petrol (lokale Akzente) */
+  --color-accent: #BF3636;         /* Rot: Spenden-Button, Hover-Aktionen */
+  --color-text-dark: #27424E;      /* Slider-Content, Fließtext-Akzente */
+  --color-text-base: #666666;      /* Divi-Body-Standard */
+  --color-bg: #FFFFFF;
+  --color-bg-gray: #F3F3F3;       /* Grau-Sections */
+  --color-bg-gray-dark: #E2E2E2;
+
+  /* Schriften (selbst gehostet: Bitter-Medium.ttf, Bitter-SemiBold.ttf, Epilogue-Bold.ttf) */
+  --font-heading: "Epilogue", sans-serif;  /* Überschriften (Bold) */
+  --font-body: "Bitter", serif;            /* Slider-Text, News-/Textinhalte */
+  --font-body-weight: 500;                 /* Bitter Medium */
+  --font-body-weight-strong: 600;          /* Bitter SemiBold */
+
+  /* Schriftgrößen (Desktop) */
+  --size-h1: 30px;
+  --size-h2: 26px;
+  --size-h3: 22px;
+  --size-slider-title: 36px;   /* mobil 30px */
+  --size-slider-text: 18px;    /* mobil 16px */
+  --size-body: 14px;
+  --size-donate-button: 22px;
+
+  /* Layout */
+  --container-max: 1080px;
+  --header-height: 143px;        /* sticky: 115px */
+  --slider-height: 600px;
+  --button-radius: 3px;
+  --button-border: 2px;
+  --donate-button-size: 150px;  /* rund, --color-accent, rotate(7deg) */
+}
+
+/*
+ * Breakpoints (Divi-Standard, Mobile-First:
+ * ≤ 479 / ≤ 767 mobil, 768–980 Tablet, ≥ 981 Desktop,
+ * zusätzlich 1100 / 1350 für breite Darstellungen)
+ * Verwendung in Media Queries:
+ *   @media (max-width: 479px)  { … }
+ *   @media (max-width: 767px)  { … }
+ *   @media (max-width: 980px)  { … }
+ *   @media (min-width: 1100px) { … }
+ *   @media (min-width: 1350px) { … }
+ */

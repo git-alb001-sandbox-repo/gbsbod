@@ -1,0 +1,20 @@
+title: Verbindungen
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      required: true
+      display: Name
+  -
+    handle: logo
+    field:
+      type: assets
+      display: Logo
+      max_files: 1
+      container: assets
+  -
+    handle: url
+    field:
+      type: link
+      display: URL

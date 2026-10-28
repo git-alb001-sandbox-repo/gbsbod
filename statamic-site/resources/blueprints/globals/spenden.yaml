@@ -1,0 +1,8 @@
+title: Spenden
+fields:
+  -
+    handle: paypal_button_id
+    field:
+      type: text
+      display: 'PayPal-Button-ID'
+      instructions: 'Hosted-Button-ID des PayPal-Spendenlinks (paypal.com/donate/?hosted_button_id=…)'

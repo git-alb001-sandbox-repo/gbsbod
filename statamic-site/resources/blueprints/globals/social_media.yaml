@@ -1,0 +1,22 @@
+title: Social Media
+fields:
+  -
+    handle: youtube
+    field:
+      type: link
+      display: YouTube
+  -
+    handle: facebook
+    field:
+      type: link
+      display: Facebook
+  -
+    handle: instagram
+    field:
+      type: link
+      display: Instagram
+  -
+    handle: x
+    field:
+      type: link
+      display: 'X (ehem. Twitter)'

@@ -1,0 +1,57 @@
+title: Kontakt
+fields:
+  -
+    handle: vereinsname
+    field:
+      type: text
+      display: Vereinsname
+  -
+    handle: strasse
+    field:
+      type: text
+      display: Straße
+  -
+    handle: plz_ort
+    field:
+      type: text
+      display: 'PLZ / Ort'
+  -
+    handle: vereinsregister
+    field:
+      type: text
+      display: Vereinsregister
+  -
+    handle: erster_vorsitzender
+    field:
+      type: text
+      display: Erster Vorsitzender
+  -
+    handle: zweiter_vorsitzender
+    field:
+      type: text
+      display: Zweiter Vorsitzender
+  -
+    handle: dritter_vorsitzender
+    field:
+      type: text
+      display: Dritter Vorsitzender
+  -
+    handle: email
+    field:
+      type: text
+      display: E-Mail
+  -
+    handle: kontoinhaber
+    field:
+      type: text
+      display: Kontoinhaber
+  -
+    handle: bank
+    field:
+      type: text
+      display: Bank
+  -
+    handle: iban
+    field:
+      type: text
+      display: IBAN
