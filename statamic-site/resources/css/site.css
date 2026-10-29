@@ -250,6 +250,192 @@ img {
     color: #fff;
 }
 
+/* Suchen-Lupe (rechts neben dem Menü, wie Divi auf den Referenz-Sites) */
+.search-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background: none;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-toggle:hover {
+    color: var(--color-primary-light);
+}
+
+.search-toggle svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Aufklappendes Suchfeld (Overlay über dem Header) */
+.site-search {
+    position: absolute;
+    inset: 0;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+}
+
+.site-search[hidden] {
+    display: none;
+}
+
+.site-search-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-search-form {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+.site-search-form input[type="search"] {
+    width: 100%;
+    padding: 10px 2px;
+    border: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 18px;
+}
+
+.site-search-form input[type="search"]:focus {
+    outline: none;
+    border-bottom-color: #fff;
+}
+
+.site-search-form input[type="search"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.site-search-submit,
+.site-search-close {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background: none;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.site-search-submit:hover,
+.site-search-close:hover {
+    color: var(--color-primary-light);
+}
+
+.site-search-submit svg,
+.site-search-close svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Barrierefreiheit: Screenreader-only */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Suchergebnis-Seite (/suche)                                         */
+/* ------------------------------------------------------------------ */
+
+.search-page {
+    padding-block: 40px 60px;
+}
+
+.page-search-form {
+    display: flex;
+    gap: 12px;
+    max-width: 560px;
+    margin-block: 0 32px;
+}
+
+.page-search-form input[type="search"] {
+    flex: 1 1 auto;
+    padding: 10px 14px;
+    border: 1px solid var(--color-bg-gray-dark);
+    border-radius: var(--button-radius);
+    font-family: var(--font-body);
+    font-size: var(--size-body);
+    color: var(--color-text-base);
+    background-color: var(--color-bg);
+}
+
+.page-search-form input[type="search"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.page-search-submit {
+    padding: 10px 22px;
+    border: 0;
+    border-radius: var(--button-radius);
+    background-color: var(--color-primary);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: var(--size-body);
+    cursor: pointer;
+}
+
+.page-search-submit:hover {
+    background-color: var(--color-accent);
+}
+
+.search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-result {
+    padding-block: 14px;
+    border-bottom: 1px solid var(--color-bg-gray-dark);
+}
+
+.search-result-title {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-text-dark);
+}
+
+.search-result-title:hover {
+    color: var(--color-accent);
+}
+
+.search-result-meta {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--color-text-base);
+    text-transform: uppercase;
+    letter-spacing: 0.85px;
+}
+
+.search-no-results,
+.search-results-count {
+    color: var(--color-text-base);
+}
+
 /* ------------------------------------------------------------------ */
 /* Footer                                                              */
 /* ------------------------------------------------------------------ */
@@ -332,6 +518,11 @@ img {
 @media (max-width: 980px) {
     .nav-toggle {
         display: flex;
+    }
+
+    /* Suchen-Lupe wie auf den Referenz-Sites nur im Desktop-Menü */
+    .search-toggle {
+        display: none;
     }
 
     .main-nav {

@@ -1,0 +1,30 @@
+<div class="container search-page">
+    <h1>Suche</h1>
+
+    <form class="page-search-form" action="/suche" method="get" role="search">
+        <label class="visually-hidden" for="page-search-input">Suchbegriff</label>
+        <input id="page-search-input" type="search" name="q"
+               value="{{ get:q }}" placeholder="Suchbegriff eingeben …"
+               autocomplete="off">
+        <button class="page-search-submit" type="submit">Suchen</button>
+    </form>
+
+    {{ search:results index="default" as="hits" }}
+        {{ if get:q }}
+            {{ if no_results }}
+                <p class="search-no-results">Keine Treffer für „{{ get:q }}“.</p>
+            {{ else }}
+                <p class="search-results-count">{{ total_results }} Treffer für „{{ get:q }}“:</p>
+
+                <ul class="search-results">
+                    {{ hits }}
+                        <li class="search-result">
+                            <a class="search-result-title" href="{{ url }}">{{ title }}</a>
+                            <p class="search-result-meta">{{ collection:title }}</p>
+                        </li>
+                    {{ /hits }}
+                </ul>
+            {{ /if }}
+        {{ /if }}
+    {{ /search:results }}
+</div>

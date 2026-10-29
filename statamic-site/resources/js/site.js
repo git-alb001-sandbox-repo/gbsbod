@@ -21,4 +21,34 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         });
     }
+
+    // Suchfeld-Overlay (Lupe im Header, Verhalten wie Divi auf den Referenz-Sites)
+    const searchToggle = document.querySelector('.search-toggle');
+    const search = document.querySelector('.site-search');
+    const searchClose = document.querySelector('.site-search-close');
+    const searchInput = document.querySelector('#site-search-input');
+
+    const closeSearch = () => {
+        search.hidden = true;
+        search.classList.remove('is-open');
+        searchToggle.setAttribute('aria-expanded', 'false');
+        searchToggle.setAttribute('aria-label', 'Suche öffnen');
+        searchToggle.focus();
+    };
+
+    if (searchToggle && search) {
+        searchToggle.addEventListener('click', () => {
+            search.hidden = false;
+            search.classList.add('is-open');
+            searchToggle.setAttribute('aria-expanded', 'true');
+            searchToggle.setAttribute('aria-label', 'Suche schließen');
+            searchInput && searchInput.focus();
+        });
+
+        searchClose && searchClose.addEventListener('click', closeSearch);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !search.hidden) closeSearch();
+        });
+    }
 });

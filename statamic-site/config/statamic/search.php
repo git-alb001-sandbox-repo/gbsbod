@@ -27,14 +27,14 @@ return [
 
         'default' => [
             'driver' => 'local',
-            'searchables' => 'content',
-            'fields' => ['title'],
+            'searchables' => [
+                'collection:pages',
+                'collection:news',
+                'collection:themen',
+                'collection:termine',
+            ],
+            'fields' => ['title', 'content'],
         ],
-
-        // 'blog' => [
-        //     'driver' => 'local',
-        //     'searchables' => 'collection:blog',
-        // ],
 
     ],
 
