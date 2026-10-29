@@ -13,6 +13,9 @@ GBS-Design). WordPress ist explizit keine Option.
 - Keine Änderungen außerhalb dieses Projektordners.
 
 ## Genehmigungen
+- Entwicklungswerkzeuge dürfen nach ~/.local installiert werden 
+  (z. B. portable Node/PHP-Versionen). Alles andere bleibt 
+  außerhalb des Projektordners tabu.
 - Alle Aktionen im Projektordner ohne Rückfrage: Dateien erstellen, 
   bearbeiten, verschieben, löschen, Commits und git push ausführen.
 - Installation neuer Pakete (apt/pip/composer): vorher kurz ankündigen.
