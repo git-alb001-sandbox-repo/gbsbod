@@ -1,0 +1,8 @@
+name: 'Andreas Leber'
+super: true
+id: bd555f62-6fc6-4d45-813a-e66e0a970a10
+password_hash: $2y$12$8HMntBsGLBRDN0QT2W0oyOZz3USgxCreRhqN1BBtY/K01jn33dhke
+preferences:
+  collections:
+    news:
+      view: list
