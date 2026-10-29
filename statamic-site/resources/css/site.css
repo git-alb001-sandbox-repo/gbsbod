@@ -511,6 +511,54 @@ img {
 }
 
 /* ------------------------------------------------------------------ */
+/* Kalender-Teaser (gbs-termine.de, TICKET-007)                         */
+/* ------------------------------------------------------------------ */
+
+.gbs-calendar-grid .teaser-row {
+    padding-block: 14px;
+    border-bottom: 1px solid var(--color-bg-gray-dark);
+}
+
+.gbs-calendar-grid .teaser-row.first-row {
+    padding-top: 0;
+}
+
+.gbs-calendar-grid .kalender-date {
+    margin: 0 0 4px;
+    font-size: 13px;
+    color: var(--color-text-base);
+    text-transform: uppercase;
+    letter-spacing: 0.85px;
+}
+
+.gbs-calendar-grid .kalender-title {
+    font-size: 20px;
+    margin: 0 0 6px;
+}
+
+.gbs-calendar-grid .kalender-title a {
+    color: var(--color-primary);
+}
+
+.gbs-calendar-grid .kalender-title a:hover {
+    color: var(--color-accent);
+}
+
+.gbs-calendar-grid .kalender-sub-title {
+    margin: 0;
+    font-size: var(--size-body);
+    color: var(--color-text-dark);
+}
+
+.gbs-calendar-grid .kalender-sub-title strong {
+    font-weight: var(--font-body-weight-strong);
+}
+
+.gbs-calendar-grid .read-more {
+    color: var(--color-accent);
+}
+
+/* ------------------------------------------------------------------ */
 /* Breakpoints (Mobile-First; Divi-Standard 479/767/980, breit 1100/1350) */
 /* ------------------------------------------------------------------ */
 
