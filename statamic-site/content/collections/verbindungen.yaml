@@ -1,2 +1,5 @@
 title: Verbindungen
 route: '/verbindungen/{slug}'
+# Reihenfolge wie "Unsere Kooperationspartner" auf hbbk-bodensee.org
+# (TICKET-008-Abnahme): Sortierung über das Feld "order".
+sort_field: order

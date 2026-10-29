@@ -7,6 +7,12 @@ fields:
       required: true
       display: Name
   -
+    handle: order
+    field:
+      type: integer
+      display: Reihenfolge
+      instructions: 'Sortierreihenfolge im Logo-Raster (wie hbbk-bodensee.org, kleinere Zahl zuerst)'
+  -
     handle: logo
     field:
       type: assets

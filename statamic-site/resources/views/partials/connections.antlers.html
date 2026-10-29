@@ -1,5 +1,5 @@
 <div class="connections-grid">
-    {{ collection:verbindungen limit="8" as="partner" }}
+    {{ collection:verbindungen sort="order" as="partner" }}
         {{ partner }}
             <a class="connections-item" href="{{ link }}" target="_blank" rel="noopener noreferrer"
                title="{{ title }}">

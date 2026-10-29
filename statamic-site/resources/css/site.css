@@ -176,9 +176,13 @@ img {
     gap: 32px;
 }
 
-/* Hauptmenü: transparent auf dem Petrol-Banner */
+/* Hauptmenü: transparent auf dem Petrol-Banner; Suchen-Lupe direkt
+   anschließend wie ein weiterer Menüpunkt (wie gbs-karlsruhe.de) */
 .main-nav {
     background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 28px;
 }
 
 .nav-list {

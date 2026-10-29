@@ -19,19 +19,19 @@
                         </li>
                     {{ /nav:main }}
                 </ul>
+
+                <button class="search-toggle" type="button" aria-expanded="false"
+                        aria-controls="site-search" aria-label="Suche öffnen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
             </nav>
 
-            <button class="search-toggle" type="button" aria-expanded="false"
-                    aria-controls="site-search" aria-label="Suche öffnen">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </button>
-
             <a class="donate-button"
-               href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id={{ spenden:paypal_button_id }}"
+               href="https://www.paypal.com/donate/?hosted_button_id={{ spenden:paypal_button_id }}"
                target="_blank" rel="noopener">Spenden</a>
         </div>
     </div>

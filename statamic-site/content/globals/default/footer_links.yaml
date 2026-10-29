@@ -1,12 +1,16 @@
 links:
   -
     type: link
+    label: Impressum
+    url: /impressum
+  -
+    type: link
     label: Datenschutz
     url: /datenschutz
   -
     type: link
-    label: Impressum
-    url: /impressum
+    label: INTERN
+    url: /cp/login
   -
     type: link
     label: 'Die GBS (Stiftung)'
