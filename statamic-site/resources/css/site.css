@@ -190,12 +190,14 @@ img {
     padding: 0;
 }
 
-/* Hauptmenü in Bitter wie auf den Referenz-Sites (erbt dort den Body-Font) */
+/* Hauptmenü in Bitter wie auf den Referenz-Sites (erbt dort den Body-Font);
+   Labels in Großbuchstaben mit letter-spacing 0.85px wie gbs-stuttgart.de */
 .nav-item a {
     font-family: var(--font-body);
     font-weight: var(--font-body-weight);
     font-size: var(--size-body);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.85px;
+    text-transform: uppercase;
     color: #fff;
     padding-block: 6px;
 }
@@ -286,6 +288,7 @@ img {
     color: #fff;
     font-family: var(--font-body);
     font-size: var(--size-body);
+    text-transform: uppercase;
 }
 
 .footer-nav-item a:hover {
