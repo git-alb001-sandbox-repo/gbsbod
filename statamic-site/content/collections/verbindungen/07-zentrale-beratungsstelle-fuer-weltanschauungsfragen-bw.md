@@ -1,7 +1,7 @@
 ---
 title: 'Zentrale Beratungsstelle für Weltanschauungsfragen BW'
+id: 90e3efc9-be3c-471e-3dcd-2906e2d1650a
 order: 7
-id: 1bda48f9-e81f-4652-f91c-fdc47e2cb192
-logo: verbindungen/07-weltanschauungsfragen-bw.svg
+logo: verbindungen/zebra-bw.png
 link: 'https://zebra-bw.com/'
 ---

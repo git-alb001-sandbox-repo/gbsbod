@@ -1,7 +1,7 @@
 ---
 title: 'Zebra-Kino'
+id: b2078c53-ce25-4fd5-45cc-0453f33be4dd
 order: 4
-id: 884fc928-977a-4160-ad41-f70c1c7f2728
-logo: verbindungen/04-zebra-kino.svg
+logo: verbindungen/zebra-kino.webp
 link: 'https://zebra-kino.de/'
 ---

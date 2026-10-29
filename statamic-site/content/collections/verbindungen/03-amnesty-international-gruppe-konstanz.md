@@ -1,7 +1,7 @@
 ---
 title: 'Amnesty International Gruppe Konstanz'
+id: a4a57a01-14c3-438d-9559-d0a6e64b6af6
 order: 3
-id: 0d3d56a5-bf44-406e-0991-99a0210f1f61
-logo: verbindungen/03-amnesty-konstanz.svg
+logo: verbindungen/amnesty-kn.webp
 link: 'https://amnesty-konstanz.de/'
 ---

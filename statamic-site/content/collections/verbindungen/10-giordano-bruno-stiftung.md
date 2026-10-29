@@ -1,7 +1,7 @@
 ---
 title: 'Giordano-Bruno-Stiftung'
+id: 28aad698-6f6f-4774-cb1f-ebb848570883
 order: 10
-id: 87a89064-ca0e-4a00-30f3-e39203131b82
-logo: verbindungen/10-giordano-bruno-stiftung.svg
+logo: verbindungen/gbs-logo-small.webp
 link: 'https://www.giordano-bruno-stiftung.de/'
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Terre des femmes'
+id: e2b42b05-ef13-4aac-dc3f-b76fb945d003
 order: 5
-id: c0c3a6a7-f52e-4aea-8cb4-8f7fc649eaa4
-logo: verbindungen/05-terre-des-femmes.svg
+logo: verbindungen/tdf.webp
 link: 'https://frauenrechte.de/'
 ---

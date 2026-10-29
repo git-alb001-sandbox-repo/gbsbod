@@ -1,7 +1,7 @@
 ---
 title: 'Freidenker Schweiz'
+id: ede3a35a-75d3-4448-65b1-11b18ece70ee
 order: 8
-id: bc3d8ed0-fb8b-4ea8-bdfb-ca6934811f2a
-logo: verbindungen/08-freidenker-schweiz.svg
+logo: verbindungen/freidenker.webp
 link: 'https://frei-denken.ch/'
 ---

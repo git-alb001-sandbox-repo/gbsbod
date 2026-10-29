@@ -1,7 +1,7 @@
 ---
 title: 'DGHS'
+id: 2262d13a-f3d2-42e2-daf8-69bd51f30252
 order: 2
-id: b25d9e1e-8022-4283-6179-31d162a0571a
-logo: verbindungen/02-dghs.svg
+logo: verbindungen/logo-dghs.webp
 link: 'https://www.dghs.de/'
 ---
