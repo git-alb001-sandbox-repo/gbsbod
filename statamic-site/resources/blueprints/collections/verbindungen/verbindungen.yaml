@@ -14,7 +14,7 @@ fields:
       max_files: 1
       container: assets
   -
-    handle: url
+    handle: link
     field:
       type: link
-      display: URL
+      display: Link (extern)

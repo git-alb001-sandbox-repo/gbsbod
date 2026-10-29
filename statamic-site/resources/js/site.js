@@ -51,4 +51,40 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Escape' && !search.hidden) closeSearch();
         });
     }
+
+    // Hero-Slider (Auto-Rotation 6000 ms, Pfeile, Dots; TICKET-008)
+    const slider = document.querySelector('.hero-slider');
+
+    if (slider) {
+        const slides = [...slider.querySelectorAll('.hero-slide')];
+        const dots = [...slider.querySelectorAll('.hero-slider-dot')];
+        const prev = slider.querySelector('.hero-slider-arrow--prev');
+        const next = slider.querySelector('.hero-slider-arrow--next');
+        const interval = parseInt(slider.dataset.interval, 10) || 6000;
+        let current = 0;
+        let timer = null;
+
+        if (slides.length > 1) {
+            const show = (index) => {
+                current = (index + slides.length) % slides.length;
+                slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+                dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
+            };
+
+            const restart = () => {
+                clearInterval(timer);
+                timer = setInterval(() => show(current + 1), interval);
+            };
+
+            next.addEventListener('click', () => { show(current + 1); restart(); });
+            prev.addEventListener('click', () => { show(current - 1); restart(); });
+            dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); restart(); }));
+
+            restart();
+        } else {
+            prev.remove();
+            next.remove();
+            slider.querySelector('.hero-slider-dots')?.remove();
+        }
+    }
 });

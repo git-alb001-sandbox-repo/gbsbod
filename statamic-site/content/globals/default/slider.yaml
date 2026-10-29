@@ -1,0 +1,14 @@
+slides:
+  -
+    titel: 'GBS-Bodensee'
+    text: 'Regionalgruppe der Giordano-Bruno-Stiftung – Aufklärung im 21. Jahrhundert, hier am Bodensee.'
+    bild: slider/slide-01.svg
+  -
+    titel: 'Aufklärer werden'
+    text: 'Die meisten Aktivitäten der Regionalgruppe finden im hbbk bodensee statt. Machen Sie mit!'
+    bild: slider/slide-02.svg
+    link: 'https://hbbk-bodensee.org'
+  -
+    titel: 'Offener Kreis'
+    text: 'Jeder kann mitmachen: Stammtisch an jedem dritten Dienstag im Monat, 19–22 Uhr.'
+    bild: slider/slide-03.svg

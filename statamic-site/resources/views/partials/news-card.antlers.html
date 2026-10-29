@@ -1,0 +1,15 @@
+<article class="news-card">
+    {{ if bild }}
+        <a class="news-card-image" href="{{ url }}">
+            <img src="{{ bild }}" alt="{{ title }}" loading="lazy">
+        </a>
+    {{ /if }}
+    <div class="news-card-body">
+        <p class="news-card-date">{{ date format="d.m.Y" }}</p>
+        <h3 class="news-card-title"><a href="{{ url }}">{{ title }}</a></h3>
+        {{ if teaser }}
+            <p class="news-card-teaser">{{ teaser }}</p>
+        {{ /if }}
+        <a class="news-card-more" href="{{ url }}">Weiterlesen</a>
+    </div>
+</article>

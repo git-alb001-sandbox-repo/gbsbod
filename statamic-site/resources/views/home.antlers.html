@@ -1,1 +1,53 @@
-{{ content }}
+{{ partial:hero-slider }}
+
+<section class="home-section section-news">
+    <div class="container">
+        {{ partial:section-heading heading="Aktuelle Meldungen" }}
+        <div class="news-grid">
+            {{ collection:news status="published" sort="date:desc" limit="3" as="meldungen" }}
+                {{ meldungen }}
+                    {{ partial:news-card }}
+                {{ /meldungen }}
+            {{ /collection:news }}
+        </div>
+    </div>
+</section>
+
+<section class="home-section section-termine section--gray">
+    <div class="container">
+        {{ partial:section-heading heading="Aktuelle Termine" }}
+        {{ partial:kalender-teaser }}
+    </div>
+</section>
+
+<section class="home-section section-verbindungen">
+    <div class="container">
+        {{ partial:section-heading heading="Beste Verbindungen" }}
+        {{ partial:connections }}
+    </div>
+</section>
+
+<section class="home-section section-newsletter section--petrol">
+    <div class="container">
+        {{ partial:newsletter }}
+    </div>
+</section>
+
+<section class="home-section section-mitglied">
+    <div class="container">
+        {{ partial:section-heading heading="Mitglied werden" }}
+        <p class="mitglied-text">
+            Werden Sie Teil der GBS-Bodensee! Die meisten Aktivitäten der
+            Regionalgruppe finden im hbbk bodensee statt – über das
+            Mitgliedsformular des hbbk können Sie direkt beitreten.
+        </p>
+        <a class="btn btn--red" href="https://hbbk-bodensee.org/mitglied-werden"
+           target="_blank" rel="noopener noreferrer">Zum Mitgliedsformular</a>
+    </div>
+</section>
+
+<section class="home-section section-spenden section--gray">
+    <div class="container">
+        {{ partial:donate }}
+    </div>
+</section>

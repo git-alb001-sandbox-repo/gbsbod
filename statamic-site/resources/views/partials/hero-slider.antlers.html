@@ -1,0 +1,40 @@
+<section class="hero-slider" data-interval="6000" aria-roledescription="Karussell" aria-label="Startseiten-Slider">
+    <div class="hero-slider-track">
+        {{ slider:slides }}
+            <div class="hero-slide{{ if first }} is-active{{ /if }}">
+                <img class="hero-slide-bg" src="{{ bild }}" alt=""
+                     {{ unless first }}loading="lazy"{{ /unless }}>
+                <div class="hero-slide-overlay"></div>
+                <div class="container hero-slide-content">
+                    <h2 class="hero-slide-title">{{ titel }}</h2>
+                    <p class="hero-slide-text">{{ text }}</p>
+                    {{ if link }}
+                        <a class="hero-slide-link" href="{{ link }}">Mehr erfahren</a>
+                    {{ /if }}
+                </div>
+            </div>
+        {{ /slider:slides }}
+    </div>
+
+    <button class="hero-slider-arrow hero-slider-arrow--prev" type="button"
+            aria-label="Vorheriger Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button class="hero-slider-arrow hero-slider-arrow--next" type="button"
+            aria-label="Nächster Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <div class="hero-slider-dots">
+        {{ slider:slides }}
+            <button class="hero-slider-dot{{ if first }} is-active{{ /if }}" type="button"
+                    aria-label="Zu Slide {{ count }}"></button>
+        {{ /slider:slides }}
+    </div>
+</section>

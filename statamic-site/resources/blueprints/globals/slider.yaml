@@ -1,0 +1,42 @@
+title: Slider
+sections:
+  -
+    display: Slides
+    fields:
+      -
+        handle: slides
+        field:
+          type: grid
+          display: Slides
+          mode: table
+          min_rows: 1
+          max_rows: 6
+          add_row: Slide hinzufügen
+          fields:
+            -
+              handle: titel
+              field:
+                type: text
+                display: Titel
+                width: 33
+            -
+              handle: text
+              field:
+                type: textarea
+                display: Text
+                width: 33
+            -
+              handle: bild
+              field:
+                type: assets
+                display: Hintergrundbild
+                container: assets
+                max_files: 1
+                restrict: false
+                width: 33
+            -
+              handle: link
+              field:
+                type: link
+                display: Link (optional)
+                width: 33

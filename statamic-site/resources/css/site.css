@@ -559,6 +559,297 @@ img {
 }
 
 /* ------------------------------------------------------------------ */
+/* Startseite: Hero-Slider (TICKET-008)                                */
+/* ------------------------------------------------------------------ */
+
+.hero-slider {
+    position: relative;
+    height: var(--slider-height);
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hero-slide-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lesbarkeits-Overlay, damit der petrolfarbene Titel auf Fotos lesbar bleibt */
+.hero-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+.hero-slide-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 720px;
+}
+
+.hero-slide-title {
+    font-size: var(--size-slider-title);
+    color: var(--color-primary);
+    margin: 0 0 0.4em;
+}
+
+.hero-slide-text {
+    font-size: var(--size-slider-text);
+    color: var(--color-text-dark);
+    margin: 0 0 1em;
+}
+
+.hero-slide-link {
+    align-self: flex-start;
+    color: var(--color-primary);
+    font-weight: var(--font-body-weight-strong);
+}
+
+.hero-slide-link:hover {
+    color: var(--color-accent);
+}
+
+/* Pfeile: Hell-Petrol, Hover Rot (wie Referenz) */
+.hero-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: 0;
+    color: var(--color-primary-light);
+    cursor: pointer;
+}
+
+.hero-slider-arrow:hover {
+    color: var(--color-accent);
+}
+
+.hero-slider-arrow--prev { left: 12px; }
+.hero-slider-arrow--next { right: 12px; }
+
+.hero-slider-arrow svg {
+    width: 34px;
+    height: 34px;
+    filter: drop-shadow(0 1px 2px rgba(0, 40, 46, 0.4));
+}
+
+/* Controller-Punkte: weiß, aktiv Petrol (wie Divi) */
+.hero-slider-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.hero-slider-dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border-radius: 50%;
+    border: 0;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 40, 46, 0.4);
+}
+
+.hero-slider-dot.is-active {
+    background-color: var(--color-primary);
+}
+
+/* ------------------------------------------------------------------ */
+/* Startseite: Sektionen                                               */
+/* ------------------------------------------------------------------ */
+
+.home-section {
+    padding-block: 56px;
+}
+
+.home-section.section--gray {
+    background-color: var(--color-bg-gray);
+}
+
+.home-section.section--petrol {
+    background-color: var(--color-primary);
+}
+
+.section-heading {
+    font-size: var(--size-h2);
+    color: var(--color-primary);
+    margin: 0 0 28px;
+}
+
+.section--petrol .section-heading {
+    color: #fff;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border: 0;
+    border-radius: var(--button-radius);
+    font-family: var(--font-body);
+    font-weight: var(--font-body-weight-strong);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn--red {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.btn--red:hover {
+    background-color: #a52c2c;
+    color: #fff;
+}
+
+.btn--light {
+    background-color: #fff;
+    color: var(--color-primary);
+}
+
+.btn--light:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+}
+
+/* News-Grid (3 Karten) */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid var(--color-bg-gray-dark);
+    border-radius: var(--button-radius);
+    overflow: hidden;
+}
+
+.news-card-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.news-card-body {
+    padding: 18px;
+}
+
+.news-card-date {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: var(--color-text-base);
+    text-transform: uppercase;
+    letter-spacing: 0.85px;
+}
+
+.news-card-title {
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.news-card-title a {
+    color: var(--color-primary);
+}
+
+.news-card-title a:hover {
+    color: var(--color-accent);
+}
+
+.news-card-teaser {
+    margin: 0 0 12px;
+    color: var(--color-text-base);
+}
+
+.news-card-more {
+    margin-top: auto;
+    color: var(--color-accent);
+    font-weight: var(--font-body-weight-strong);
+}
+
+/* Verbindungen (Logo-Raster) */
+.connections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.connections-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background-color: #fff;
+    border: 1px solid var(--color-bg-gray-dark);
+    border-radius: var(--button-radius);
+}
+
+.connections-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+}
+
+.connections-name {
+    font-size: 16px;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/* Newsletter + Spenden */
+.newsletter-text,
+.mitglied-text,
+.donate-text {
+    max-width: 640px;
+    font-size: 16px;
+    margin: 0 0 24px;
+}
+
+.section--petrol .newsletter-text,
+.section--petrol .donate-text {
+    color: var(--color-primary-light);
+}
+
+.section-heading + .newsletter-text,
+.section-heading + .mitglied-text,
+.section-heading + .donate-text {
+    margin-top: 0;
+}
+
+/* ------------------------------------------------------------------ */
 /* Breakpoints (Mobile-First; Divi-Standard 479/767/980, breit 1100/1350) */
 /* ------------------------------------------------------------------ */
 
@@ -571,6 +862,19 @@ img {
     /* Suchen-Lupe wie auf den Referenz-Sites nur im Desktop-Menü */
     .search-toggle {
         display: none;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .connections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-slider {
+        height: 460px;
     }
 
     .main-nav {
@@ -641,6 +945,37 @@ img {
         width: 90px;
         height: 90px;
         font-size: 16px;
+    }
+
+    /* Startseite mobil (TICKET-008): Slider kleiner, Titel 30 px, Text 16 px */
+    .hero-slider {
+        height: 380px;
+    }
+
+    .hero-slide-title {
+        font-size: 30px;
+    }
+
+    .hero-slide-text {
+        font-size: 16px;
+    }
+
+    .hero-slide-content {
+        max-width: 100%;
+    }
+
+    .hero-slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-slider-arrow svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .home-section {
+        padding-block: 40px;
     }
 }
 

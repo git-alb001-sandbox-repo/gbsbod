@@ -1,0 +1,14 @@
+<div class="connections-grid">
+    {{ collection:verbindungen limit="8" as="partner" }}
+        {{ partner }}
+            <a class="connections-item" href="{{ link }}" target="_blank" rel="noopener noreferrer"
+               title="{{ title }}">
+                {{ if logo }}
+                    <img src="{{ logo }}" alt="{{ title }}" loading="lazy">
+                {{ else }}
+                    <span class="connections-name">{{ title }}</span>
+                {{ /if }}
+            </a>
+        {{ /partner }}
+    {{ /collection:verbindungen }}
+</div>
