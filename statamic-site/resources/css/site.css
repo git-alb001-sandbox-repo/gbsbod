@@ -7,6 +7,9 @@
 
 /* ------------------------------------------------------------------ */
 /* Fonts (selbst gehostet, OFL; Quelle: Google Fonts, Bitter + Epilogue) */
+/* Hinweis: Die Bitter-woff2 sind der Variable Font (wght 100–900); die   */
+/* Nametabelle nennt die Default-Instanz "Bitter Thin" – bei            */
+/* font-weight 500/600 rendern die Browser korrekt Medium/SemiBold.     */
 /* ------------------------------------------------------------------ */
 
 /* Bitter Medium (500) */
@@ -187,9 +190,10 @@ img {
     padding: 0;
 }
 
+/* Hauptmenü in Bitter wie auf den Referenz-Sites (erbt dort den Body-Font) */
 .nav-item a {
-    font-family: var(--font-heading);
-    font-weight: 700;
+    font-family: var(--font-body);
+    font-weight: var(--font-body-weight);
     font-size: var(--size-body);
     letter-spacing: 0.03em;
     color: #fff;
@@ -230,8 +234,8 @@ img {
     border-radius: 50%;
     background-color: var(--color-accent);
     color: #fff;
-    font-family: var(--font-heading);
-    font-weight: 700;
+    font-family: var(--font-body);
+    font-weight: var(--font-body-weight-strong);
     font-size: var(--size-donate-button);
     text-align: center;
     transform: rotate(7deg);
@@ -280,6 +284,7 @@ img {
 
 .footer-nav-item a {
     color: #fff;
+    font-family: var(--font-body);
     font-size: var(--size-body);
 }
 
