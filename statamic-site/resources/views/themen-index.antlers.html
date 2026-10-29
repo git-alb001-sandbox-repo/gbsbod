@@ -1,0 +1,20 @@
+<div class="container page">
+    <h1>Themen</h1>
+
+    {{ collection:themen as="themen" }}
+        {{ if no_results }}
+            <p class="page-hint">Unsere Themen werden in Kürze hier vorgestellt.</p>
+        {{ else }}
+            <div class="themen-grid">
+                {{ themen }}
+                    <a class="themen-kachel" href="{{ url }}">
+                        <h2 class="themen-kachel-title">{{ title }}</h2>
+                        {{ if beschreibung }}
+                            <p class="themen-kachel-text">{{ beschreibung }}</p>
+                        {{ /if }}
+                    </a>
+                {{ /themen }}
+            </div>
+        {{ /if }}
+    {{ /collection:themen }}
+</div>

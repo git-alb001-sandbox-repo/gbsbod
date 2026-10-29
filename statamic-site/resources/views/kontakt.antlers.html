@@ -1,0 +1,16 @@
+<div class="container page">
+    <h1>Kontakt</h1>
+
+    {{ content }}
+
+    <p>Sie erreichen uns per E-Mail über die folgenden Links:</p>
+
+    <ul class="kontakt-liste">
+        {{ kontakt:ansprechpartner }}
+            <li>
+                <span class="kontakt-rolle">{{ rolle }}:</span>
+                <a href="mailto:{{ email }}">{{ name }}</a>
+            </li>
+        {{ /kontakt:ansprechpartner }}
+    </ul>
+</div>

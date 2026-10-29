@@ -854,6 +854,146 @@ img {
 }
 
 /* ------------------------------------------------------------------ */
+/* Unterseiten: Grund-Layout, Pagination, Kacheln (TICKET-009)          */
+/* ------------------------------------------------------------------ */
+
+.page {
+    padding-block: 40px 60px;
+}
+
+.page-hint {
+    color: var(--color-text-base);
+}
+
+.breadcrumb {
+    margin: 0 0 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.85px;
+}
+
+.lead {
+    font-size: 18px;
+    color: var(--color-text-dark);
+}
+
+/* News-Detail */
+.news-date {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: var(--color-text-base);
+    text-transform: uppercase;
+    letter-spacing: 0.85px;
+}
+
+.news-article-image {
+    display: block;
+    width: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    margin-block: 0 24px;
+}
+
+.news-article-content {
+    max-width: 720px;
+}
+
+.news-article-content img {
+    height: auto;
+}
+
+.news-article-back {
+    margin-top: 40px;
+}
+
+/* Pagination (News-Archiv) */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-block: 36px 0;
+}
+
+.pagination-link {
+    min-width: 40px;
+    padding: 8px 12px;
+    text-align: center;
+    border: 1px solid var(--color-bg-gray-dark);
+    border-radius: var(--button-radius);
+    color: var(--color-primary);
+}
+
+.pagination-link:hover {
+    border-color: var(--color-primary);
+    color: var(--color-accent);
+}
+
+.pagination-link.is-current {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Themen-Kacheln */
+.themen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.themen-kachel {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background-color: var(--color-bg-gray);
+    border-radius: var(--button-radius);
+    border: 1px solid transparent;
+}
+
+.themen-kachel:hover {
+    border-color: var(--color-primary);
+}
+
+.themen-kachel-title {
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.themen-kachel-title a,
+.themen-kachel .themen-kachel-title {
+    color: var(--color-primary);
+}
+
+.themen-kachel-text {
+    margin: 0;
+    color: var(--color-text-dark);
+}
+
+/* Kontakt-Seite */
+.kontakt-liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.kontakt-liste li {
+    padding-block: 10px;
+    border-bottom: 1px solid var(--color-bg-gray-dark);
+}
+
+.kontakt-rolle {
+    display: inline-block;
+    min-width: 240px;
+    color: var(--color-text-base);
+}
+
+/* 404 */
+.page-404-actions {
+    margin-top: 24px;
+}
+
+/* ------------------------------------------------------------------ */
 /* Breakpoints (Mobile-First; Divi-Standard 479/767/980, breit 1100/1350) */
 /* ------------------------------------------------------------------ */
 
@@ -871,6 +1011,17 @@ img {
     .news-grid {
         grid-template-columns: 1fr;
         max-width: 480px;
+    }
+
+    .themen-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .kontakt-rolle {
+        display: block;
+        min-width: 0;
+        margin-bottom: 2px;
     }
 
     .connections-grid {

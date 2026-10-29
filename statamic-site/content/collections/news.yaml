@@ -2,3 +2,5 @@ title: News
 route: '/meldung/{slug}'
 date: true
 sort_dir: desc
+# News-Einträge rendern standardmäßig mit dem news-Template (Detailseite)
+template: news

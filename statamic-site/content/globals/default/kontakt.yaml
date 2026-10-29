@@ -9,3 +9,24 @@ email: info@gbs-bodensee.de
 kontoinhaber: 'GBS-Bodensee e. V.'
 bank: 'Volksbank Überlingen'
 iban: 'DE12 6906 1800 0047 2737 06'
+ansprechpartner:
+  -
+    rolle: '1. Vorsitzender'
+    name: 'Jürgen Röder'
+    email: juergen.roeder@gbs-bodensee.de
+  -
+    rolle: '2. Vorsitzender'
+    name: 'Andreas Leber'
+    email: andreas.leber@gbs-bodensee.de
+  -
+    rolle: '3. Vorsitzender (Kassier)'
+    name: 'Alexander Buhl'
+    email: alexander.buhl@gbs-bodensee.de
+  -
+    rolle: 'Hochschulgruppe'
+    name: 'Scarlet Beierer'
+    email: scarlet.beierer@gbs-bodensee.de
+  -
+    rolle: 'hbbk'
+    name: 'Alexander Wolber'
+    email: alexander.wolber@gbs-bodensee.de

@@ -1,0 +1,14 @@
+<article class="container page news-article">
+    <p class="news-date">{{ date format="d.m.Y" }}</p>
+    <h1>{{ title }}</h1>
+
+    {{ if bild }}
+        <img class="news-article-image" src="{{ bild }}" alt="{{ title }}">
+    {{ /if }}
+
+    <div class="news-article-content">
+        {{ content }}
+    </div>
+
+    <p class="news-article-back"><a href="/aktuelles">&laquo; Zurück zu Aktuelles</a></p>
+</article>

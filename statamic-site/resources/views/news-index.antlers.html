@@ -1,0 +1,31 @@
+<div class="container page">
+    <h1>Aktuelles</h1>
+
+    {{ collection:news status="published" sort="date:desc" paginate="12" as="meldungen" }}
+        {{ if no_results }}
+            <p class="page-hint">Zurzeit gibt es keine Meldungen.</p>
+        {{ else }}
+            <div class="news-grid">
+                {{ meldungen }}
+                    {{ partial:news-card }}
+                {{ /meldungen }}
+            </div>
+
+            {{ paginate }}
+                {{ if total_pages > 1 }}
+                    <nav class="pagination" aria-label="Blättern">
+                        {{ if prev_page }}<a class="pagination-link" href="{{ prev_page }}">&laquo; Neuere</a>{{ /if }}
+                        {{ links:all }}
+                            {{ if count == current_page }}
+                                <span class="pagination-link is-current">{{ count }}</span>
+                            {{ else }}
+                                <a class="pagination-link" href="{{ url }}">{{ count }}</a>
+                            {{ /if }}
+                        {{ /links:all }}
+                        {{ if next_page }}<a class="pagination-link" href="{{ next_page }}">Ältere &raquo;</a>{{ /if }}
+                    </nav>
+                {{ /if }}
+            {{ /paginate }}
+        {{ /if }}
+    {{ /collection:news }}
+</div>

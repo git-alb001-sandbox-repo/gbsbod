@@ -55,3 +55,29 @@ fields:
     field:
       type: text
       display: IBAN
+  -
+    handle: ansprechpartner
+    field:
+      type: grid
+      display: Ansprechpartner
+      mode: table
+      add_row: 'Ansprechpartner hinzufügen'
+      fields:
+        -
+          handle: rolle
+          field:
+            type: text
+            display: Rolle
+            width: 33
+        -
+          handle: name
+          field:
+            type: text
+            display: Name
+            width: 33
+        -
+          handle: email
+          field:
+            type: text
+            display: E-Mail
+            width: 34

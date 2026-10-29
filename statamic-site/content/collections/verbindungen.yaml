@@ -1,5 +1,6 @@
 title: Verbindungen
-route: '/verbindungen/{slug}'
+# Kein Route: Verbindungen werden nur im Logo-Raster (/verbindungen)
+# mit externen Links dargestellt (TICKET-009).
 # Reihenfolge wie "Unsere Kooperationspartner" auf hbbk-bodensee.org
 # (TICKET-008-Abnahme): Sortierung über das Feld "order".
 sort_field: order
