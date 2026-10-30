@@ -3,6 +3,10 @@
         <a class="news-card-image" href="{{ url }}">
             <img src="{{ bild }}" alt="{{ title }}" loading="lazy">
         </a>
+    {{ else }}
+        <a class="news-card-image" href="{{ url }}">
+            <img src="/assets/news/platzhalter.svg" alt="" loading="lazy">
+        </a>
     {{ /if }}
     <div class="news-card-body">
         <p class="news-card-date">{{ date format="d. M. Y" }}</p>
@@ -10,7 +14,7 @@
             <a href="{{ url }}">{{ if card_title }}{{ card_title }}{{ else }}{{ title }}{{ /if }}</a>
         </h3>
         {{ if teaser }}
-            <p class="news-card-teaser">{{ teaser }} &hellip;</p>
+            <p class="news-card-teaser">{{ if (teaser|ends_with:'.') }}{{ teaser }}{{ else }}{{ teaser }} &hellip;{{ /if }}</p>
         {{ /if }}
         <a class="news-card-more" href="{{ url }}">Weiterlesen</a>
     </div>

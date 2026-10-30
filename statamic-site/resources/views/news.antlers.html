@@ -4,6 +4,8 @@
 
     {{ if bild }}
         <img class="news-article-image" src="{{ bild }}" alt="{{ title }}">
+    {{ else }}
+        <img class="news-article-image" src="/assets/news/platzhalter.svg" alt="">
     {{ /if }}
 
     <div class="news-article-content">
