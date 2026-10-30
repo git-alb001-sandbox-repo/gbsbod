@@ -1,0 +1,9 @@
+title: 'Nächstes Treffen'
+fields:
+  -
+    handle: text
+    field:
+      type: textarea
+      display: Text
+      instructions: 'Text des Abschnitts „Nächstes Treffen“ auf der Termine-Seite'
+      antlers: false

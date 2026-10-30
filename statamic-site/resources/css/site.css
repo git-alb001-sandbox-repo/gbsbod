@@ -883,6 +883,15 @@ img {
     margin-bottom: 0;
 }
 
+/* Termine-Seite: Abschnitts-Blöcke „Nächstes Treffen“ / „Termine“ */
+.page-block {
+    margin-bottom: 56px;
+}
+
+.page-block:last-child {
+    margin-bottom: 0;
+}
+
 .breadcrumb {
     margin: 0 0 8px;
     font-size: var(--size-meta);

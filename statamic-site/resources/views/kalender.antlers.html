@@ -1,7 +1,14 @@
-<div class="container kalender-page">
+<div class="container page">
     <h1>Termine</h1>
 
-    {{ content }}
+    <section class="page-block">
+        {{ partial:section-heading heading="Nächstes Treffen" }}
+        <p class="page-hint">{{ naechstes_treffen:text }}</p>
+    </section>
 
-    {{ partial:kalender-teaser }}
+    <section class="page-block">
+        {{ partial:section-heading heading="Termine" }}
+        {{ content }}
+        {{ partial:kalender-teaser }}
+    </section>
 </div>
