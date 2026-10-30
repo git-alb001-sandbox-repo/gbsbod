@@ -22,15 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Untermenü „Über uns" (mobil: Pfeil-Toggle, Desktop: CSS-Hover)
-    document.querySelectorAll('.subnav-toggle').forEach((btn) => {
-        btn.addEventListener('click', () => {
-            const list = btn.parentElement.querySelector('.subnav-list');
-            const open = list.classList.toggle('is-open');
-            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-    });
-
     // Suchfeld-Overlay (Lupe im Header, Verhalten wie Divi auf den Referenz-Sites)
     const searchToggle = document.querySelector('.search-toggle');
     const search = document.querySelector('.site-search');

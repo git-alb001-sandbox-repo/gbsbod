@@ -1,0 +1,23 @@
+<div class="container page ueber-uns-page">
+    <h1>Über uns</h1>
+
+    <section class="ueber-uns-section">
+        {{ partial:section-heading heading="Die GBS" }}
+        {{ section_die_gbs | markdown }}
+    </section>
+
+    <section class="ueber-uns-section">
+        {{ partial:section-heading heading="Hochschulgruppe" }}
+        {{ section_hochschulgruppe | markdown }}
+    </section>
+
+    <section class="ueber-uns-section">
+        {{ partial:section-heading heading="Netzwerk" }}
+        {{ section_netzwerk | markdown }}
+    </section>
+
+    <section class="ueber-uns-section">
+        {{ partial:section-heading heading="Verbindungen" }}
+        {{ section_verbindungen | markdown }}
+    </section>
+</div>

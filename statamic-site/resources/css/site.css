@@ -211,54 +211,6 @@ img {
     color: var(--color-primary-light);
 }
 
-/* Untermenü „Über uns" (Desktop: Aufklappen bei Hover/Fokus) */
-.nav-item.has-subnav {
-    position: relative;
-}
-
-.subnav-toggle {
-    display: none;
-    background: none;
-    border: 0;
-    padding: 4px;
-    color: #fff;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.subnav-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1100;
-    display: none;
-    min-width: 230px;
-    margin: 0;
-    padding: 8px 0;
-    list-style: none;
-    background-color: var(--color-primary);
-    border-top: 2px solid var(--color-primary-light);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-.nav-item.has-subnav:hover .subnav-list,
-.nav-item.has-subnav:focus-within .subnav-list {
-    display: block;
-}
-
-.subnav-item a {
-    display: block;
-    padding: 9px 18px;
-    white-space: nowrap;
-    border-bottom: 0;
-}
-
-.subnav-item a:hover,
-.subnav-item.is-active a {
-    color: var(--color-primary-light);
-    background-color: rgba(255, 255, 255, 0.06);
-}
-
 /* Burger-Button (nur mobil sichtbar) */
 .nav-toggle {
     display: none;
@@ -913,6 +865,15 @@ img {
     color: var(--color-text-base);
 }
 
+/* Über-uns-Seite: Text-Sektionen untereinander (TICKET-009-Befund-2) */
+.ueber-uns-section {
+    margin-bottom: 56px;
+}
+
+.ueber-uns-section:last-child {
+    margin-bottom: 0;
+}
+
 .breadcrumb {
     margin: 0 0 8px;
     font-size: 13px;
@@ -1108,48 +1069,6 @@ img {
     .nav-item a {
         display: block;
         padding-block: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    /* Untermenü im Burger-Menü: Pfeil-Taste klappt die Punkte ein */
-    .nav-item.has-subnav {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .nav-item.has-subnav > a {
-        flex: 1 1 auto;
-    }
-
-    .subnav-toggle {
-        display: inline-flex;
-        padding: 12px;
-    }
-
-    .nav-item.has-subnav:hover .subnav-list,
-    .nav-item.has-subnav:focus-within .subnav-list {
-        display: none;
-    }
-
-    .subnav-list {
-        position: static;
-        display: none;
-        width: 100%;
-        min-width: 0;
-        padding: 0;
-        border: 0;
-        box-shadow: none;
-        background-color: rgba(0, 0, 0, 0.15);
-    }
-
-    .subnav-list.is-open {
-        display: block;
-    }
-
-    .subnav-item a {
-        padding: 10px 12px 10px 32px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 

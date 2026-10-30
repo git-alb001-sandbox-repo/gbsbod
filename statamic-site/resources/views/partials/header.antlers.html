@@ -14,19 +14,8 @@
             <nav class="main-nav" id="main-nav" aria-label="Hauptmenü">
                 <ul class="nav-list">
                     {{ nav:main }}
-                        <li class="nav-item{{ if (is_current || is_parent) }} is-active{{ /if }}{{ if children }} has-subnav{{ /if }}">
+                        <li class="nav-item{{ if (is_current || is_parent) }} is-active{{ /if }}">
                             <a href="{{ url }}">{{ title }}</a>
-                            {{ if children }}
-                                <button class="subnav-toggle" type="button" aria-expanded="false"
-                                        aria-label="Untermenü öffnen">&#9662;</button>
-                                <ul class="subnav-list">
-                                    {{ children }}
-                                        <li class="subnav-item{{ if is_current }} is-active{{ /if }}">
-                                            <a href="{{ url }}"{{ if is_external }} target="_blank" rel="noopener"{{ /if }}>{{ title }}</a>
-                                        </li>
-                                    {{ /children }}
-                                </ul>
-                            {{ /if }}
                         </li>
                     {{ /nav:main }}
                 </ul>
