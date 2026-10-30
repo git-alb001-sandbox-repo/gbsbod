@@ -9,10 +9,13 @@ GBS-Design). WordPress ist explizit keine Option.
 
 ## Arbeitsweise
 - Vor größeren Änderungen kurz den Plan nennen, dann umsetzen.
-- Einfachheit vor Komplexität: die einfachste Lösung wählen, die die
-  Anforderung erfüllt. Keine zusätzlichen Features, Varianten oder
-  Optionen einbauen, die nicht ausdrücklich gefordert sind – lieber
-  minimal umsetzen, Feedback abwarten und erst dann erweitern.
+- Einfachheitsprinzip: Bei mehrdeutigen Anforderungen oder
+  Entweder-oder-Entscheidungen im Design die einfachste sinnvolle
+  Variante wählen und die getroffene Entscheidung in der Commit-Message
+  dokumentieren. Nichts Zusätzliches implementieren (Dropdowns,
+  Unterseiten, eigene Scripts), wenn der Tickettext es nicht verlangt.
+  Bei grundsätzlicher Unsicherheit: im Ticket-Vermerk fragen statt
+  bauen.
 - Alle Änderungen über Git committen (aussagekräftige Messages, Deutsch).
 - Keine Änderungen außerhalb dieses Projektordners.
 
