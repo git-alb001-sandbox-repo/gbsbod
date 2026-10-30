@@ -229,28 +229,37 @@ img {
     background-color: #fff;
 }
 
-/* Spenden-Button: rund, 150 px, rot, 7° gedreht */
-.donate-button {
+/* Header-Button „Nächster Treff" im Stil von gbs-muc.de
+   (Werte dem CSS von gbs-muc.de entnommen): 150 px rund, weißer
+   2-px-Rand, 7° gedreht, ragt aus der Unterkante des Headers heraus;
+   Hover: richtet sich gerade aus, Rand wird rot (verschwindet optisch) */
+.treff-button {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--donate-button-size);
-    height: var(--donate-button-size);
-    border-radius: 50%;
+    align-self: flex-end;
+    width: var(--header-button-size);
+    height: var(--header-button-size);
+    margin-right: 10px;
+    margin-bottom: -64px;
+    border: 2px solid #fff;
+    border-radius: 140px;
     background-color: var(--color-accent);
     color: #fff;
     font-family: var(--font-body);
     font-weight: var(--font-body-weight-strong);
-    font-size: var(--size-donate-button);
+    font-size: var(--size-header-button);
+    line-height: 1;
     text-align: center;
     transform: rotate(7deg);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transform-origin: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.donate-button:hover {
+.treff-button:hover {
     transform: rotate(0deg);
-    background-color: #a52c2c;
+    border-color: var(--color-accent);
     color: #fff;
 }
 
@@ -1076,10 +1085,9 @@ img {
         gap: 16px;
     }
 
-    .donate-button {
-        width: 110px;
-        height: 110px;
-        font-size: 18px;
+    /* Header-Button: auf Tablet/Mobil ausgeblendet wie bei gbs-muc.de */
+    .treff-button {
+        display: none;
     }
 
     .site-footer-inner {
@@ -1103,12 +1111,6 @@ img {
 
     .site-header.is-sticky .site-logo img {
         height: 50px;
-    }
-
-    .donate-button {
-        width: 90px;
-        height: 90px;
-        font-size: 16px;
     }
 
     /* Startseite mobil (TICKET-008): Slider kleiner, Titel 30 px, Text 16 px */
@@ -1150,12 +1152,6 @@ img {
 @media (max-width: 479px) {
     .nav-list {
         font-size: 13px;
-    }
-
-    .donate-button {
-        width: 76px;
-        height: 76px;
-        font-size: 14px;
     }
 
     .site-footer-logo img {

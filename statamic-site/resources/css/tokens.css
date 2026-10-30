@@ -35,7 +35,7 @@
   --size-card-title: 25px;     /* Karten-Titel (News, Themen, Kalender) */
   --size-nav: 17px;            /* Hauptmenü-Einträge */
   --size-meta: 14px;           /* Datum/Post-Meta, Footer-Menü */
-  --size-donate-button: 22px;
+  --size-header-button: 22px;  /* Header-Button „Nächster Treff" (gemessen) */
 
   /* Layout */
   --container-max: 1080px;
@@ -43,7 +43,7 @@
   --slider-height: 600px;
   --button-radius: 3px;
   --button-border: 2px;
-  --donate-button-size: 150px;  /* rund, --color-accent, rotate(7deg) */
+  --header-button-size: 150px;  /* rund, --color-accent, rotate(7deg) (gemessen) */
 }
 
 /*
