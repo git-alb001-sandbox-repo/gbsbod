@@ -5,10 +5,12 @@
         </a>
     {{ /if }}
     <div class="news-card-body">
-        <p class="news-card-date">{{ date format="d.m.Y" }}</p>
-        <h3 class="news-card-title"><a href="{{ url }}">{{ title }}</a></h3>
+        <p class="news-card-date">{{ date format="d. M. Y" }}</p>
+        <h3 class="news-card-title">
+            <a href="{{ url }}">{{ if card_title }}{{ card_title }}{{ else }}{{ title }}{{ /if }}</a>
+        </h3>
         {{ if teaser }}
-            <p class="news-card-teaser">{{ teaser }}</p>
+            <p class="news-card-teaser">{{ teaser }} &hellip;</p>
         {{ /if }}
         <a class="news-card-more" href="{{ url }}">Weiterlesen</a>
     </div>
