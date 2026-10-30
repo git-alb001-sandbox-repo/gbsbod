@@ -9,6 +9,10 @@ GBS-Design). WordPress ist explizit keine Option.
 
 ## Arbeitsweise
 - Vor größeren Änderungen kurz den Plan nennen, dann umsetzen.
+- Einfachheit vor Komplexität: die einfachste Lösung wählen, die die
+  Anforderung erfüllt. Keine zusätzlichen Features, Varianten oder
+  Optionen einbauen, die nicht ausdrücklich gefordert sind – lieber
+  minimal umsetzen, Feedback abwarten und erst dann erweitern.
 - Alle Änderungen über Git committen (aussagekräftige Messages, Deutsch).
 - Keine Änderungen außerhalb dieses Projektordners.
 
