@@ -42,6 +42,10 @@ Collection `news`, alle `published`, Original-Daten und -Slugs.
   2025-06-27): drei getrennte alte Drupal-Nodes mit identischem
   Titel zu derselben Vortragsreihe; 1:1 jeweils als eigene
   Meldungen übernommen (Slug-Suffixe wie auf der alten Site).
+  Nachtrag: Das inhaltlich identische Original-Duplikat vom
+  27.06.2025 (Slug-Suffix `-1`) wurde auf Veranlassung von
+  Andreas nach dessen Loeschung im Original ebenfalls entfernt;
+  Gesamtzahl damit 107 Entries.
 - 9 Meldungen ohne Bild → Platzhalterbild auf der Karte
   (Detail-Seite ohne Bild), siehe TICKET-011-Befund.
 - Alle Bild-/Datei-Downloads (116 Bilder, 27 Anhänge) erfolgreich;

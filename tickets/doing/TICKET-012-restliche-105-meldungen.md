@@ -34,9 +34,10 @@ und den Sachverhalt in docs/migrations-log.md vermerken
 
 ## Funktionstest
 
-- Gesamtzahl: 108 Entries (105 neu + 3 Pilot)
+- Gesamtzahl: 107 Entries (104 neu + 3 Pilot; ein Original-
+  Duplikat vom 27.06.2025 nach Loeschung im Original entfernt)
 - Sortierung neueste zuerst; Pagination auf /aktuelles
-  (108/12 = 9 Seiten)
+  (107/12 = 9 Seiten, letzte Seite 11 Karten)
 - Stichproben: Bilder laden (200), Detail-Seiten erreichbar
 - Kein card_title mit Abschneide-Dots
 
