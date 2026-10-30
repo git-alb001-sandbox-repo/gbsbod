@@ -1,13 +1,26 @@
 tree:
   -
-    title: Home
-    url: /
-  -
-    title: Aktuelles
+    title: Meldungen
     url: /aktuelles
   -
     title: Termine
     url: /termine
+  -
+    title: 'Über uns'
+    url: /ueber-uns
+    children:
+      -
+        title: 'Die GBS (Stiftung)'
+        url: 'https://www.giordano-bruno-stiftung.de/'
+      -
+        title: Verbindungen
+        url: /verbindungen
+      -
+        title: Hochschulgruppe
+        url: /hochschulgruppe
+      -
+        title: Netzwerk
+        url: /netzwerk
   -
     title: Kontakt
     url: /kontakt
