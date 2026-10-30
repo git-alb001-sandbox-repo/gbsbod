@@ -3,7 +3,7 @@
     <p class="news-date">{{ date format="d. M. Y" }}</p>
 
     {{ if bild }}
-        <img class="news-article-image" src="{{ bild }}" alt="{{ title }}">
+        <img class="news-article-image" src="{{ bild }}" alt="{{ title }}"{{ if bild_position && bild_position != "center" }} style="object-position: {{ bild_position }};"{{ /if }}>
     {{ else }}
         <img class="news-article-image" src="/assets/news/platzhalter.svg" alt="">
     {{ /if }}

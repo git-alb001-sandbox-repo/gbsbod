@@ -31,6 +31,17 @@ fields:
       max_files: 1
       container: assets
   -
+    handle: bild_position
+    field:
+      type: select
+      display: 'Bildausschnitt'
+      instructions: 'object-position für den 8:5-Beschnitt (Karte und Detail). „top" hält Köpfe/Plakat-Titel im Bild, „center" ist der Standard.'
+      options:
+        center: center (Standard)
+        top: top
+        bottom: bottom
+      default: center
+  -
     handle: content
     field:
       type: markdown

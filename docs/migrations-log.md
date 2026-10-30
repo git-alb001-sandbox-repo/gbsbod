@@ -48,3 +48,20 @@ Collection `news`, alle `published`, Original-Daten und -Slugs.
   keine fehlgeschlagenen Downloads.
 
 Keine weiteren Auffälligkeiten.
+
+## Nachtrag TICKET-012-Befund-2 (Teaser-Länge, Bildausschnitt)
+
+- **Teaser mind. 3 Zeilen**: 20 zu kurze Teaser wurden ausschließlich
+  mit Originalsätzen der jeweiligen Meldung verlängert (1:1). Drei
+  Meldungen lassen sich ohne Erfindung nicht verlängern, da ihr
+  Gesamttext bereits vollständig im Teaser steht bzw. nur aus
+  einem Satz plus Link besteht:
+  zentralrat-der-konfessionsfreien-freundeskreis,
+  ukraine-fluechtlinge, religionszugehoerigkeit-weiter-abnehmend.
+- **Bildausschnitt**: Neues Blueprint-Feld `bild_position`
+  (object-position, Standard center, im CP je Eintrag einstellbar).
+  Für alle 39 Hauptbilder, die im 8:5-Beschnitt signifikant oben
+  beschnitten würden (Seitenverhältnis < 1,45 – Portraits,
+  Personengruppen, Plakate, Buchcover), wurde `bild_position: top`
+  gesetzt; so bleiben Köpfe bzw. Plakat-Titel im Bild. Betroffene
+  Meldungen: bernd-vowinkel-wissen-statt-glauben, buchvorstellung-gott-kontrovers-was-noch-wuerde-zu-glauben-ist, bundesverfassungsgericht-zur-sterbehilfe, clergyproject-de-released, corinna-gekeler-konstanz, das-klerikale-kartell-warum-die-trennung-von-staat-und-kirche-ueberfaellig-ist, das-woke-phaenomen, der-preis-der-freiheit, die-afd-moechte-die-ns-zeit-entsorgen, die-evolution-des-denkens, dr-natalie-grams-homoeopathie-neu-gedacht-was-patienten-wirklich-hilft, ermutigung-zur-strafanzeige, erstmals-konstanz-forbidden-moves-tanzen-statt-tanzverbot, ethik-fuer-alle-vom-ersatzfach-zum-favoriten, ethikunterricht-grundschulen-baden-wuerttemberg, forbidden-moves-tanzen-statt-tanzverbot, gbs-bodensee-feiert-geburtstag, georg-elser-80-jahre-buergerbraeu-attentat, georg-elser-der-hitler-attentaeter, gewalt-und-religion, humanistischer-brunch-konstanz, irans-neuer-praesident-peseschkian-war-massgeblich-der-gewaltsamen-durchsetzung-des-hijab, ist-was-wir-wahrnehmen-wirklich-immer-wahr, kirche-macht-geld-welche-rolle-spielt-die-religion-im-saekularen-staat, kirchenrepublik-deutschland-christlicher-lobbyismus-0, kundgebung-am-muenster-konstanz-frauen-aktuelle-situation-im-iran, lange-nacht-der-wissenschaft-der-uni-konstanz-teil-1, neuer-missbrauchsfall-der-katholischen-kirche, onlinevortrag-prof-ruud-koopmans-soziologe-humboldt-uni-berlin, philipp-moeller-kommt, podcast-kritisches-denken-1, saekulare-buskampagne-2-0-kommt-auch-nach-konstanz, schottland-schafft-blasphemie-verbote-ab, tag-der-offenen-gesellschaft-im-cafe-mondial-konstanz, tilly-ausstellung-im-rheintorturm, ukraine-fluechtlinge, wahlpruefsteine-des-korso-zur-bundestagswahl-2017, widerstreit-ueber-macht-wahn-und-widerstand, wie-christlich-ist-konstanz-noch.
