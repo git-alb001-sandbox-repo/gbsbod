@@ -11,7 +11,7 @@ fields:
     field:
       type: text
       display: 'Karten-Titel'
-      instructions: 'Optionaler verkürzter Titel für Karten in Übersichten (max. 2–3 Zeilen). Leer lassen = Original-Titel. Der Original-Titel bleibt auf der Detail-Seite.'
+      instructions: 'Optionaler verkürzter Titel für Karten in Übersichten. Migrationsvorgabe: redaktionell kürzen statt abschneiden, KEINE Dots (nie „Titel …"), keine Informationen, die der Teaser bereits enthält (z. B. Ortsangaben). Leer lassen = Original-Titel. Der Original-Titel bleibt auf der Detail-Seite.'
   -
     handle: date
     field:
