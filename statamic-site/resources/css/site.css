@@ -560,7 +560,7 @@ img {
 .gbs-calendar-grid .kalender-sub-title {
     margin: 0;
     font-size: var(--size-body);
-    color: var(--color-text-dark);
+    color: var(--color-text-base);
 }
 
 .gbs-calendar-grid .kalender-sub-title strong {
