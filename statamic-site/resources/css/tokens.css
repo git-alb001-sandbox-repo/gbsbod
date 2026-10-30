@@ -23,13 +23,18 @@
   --font-body-weight: 500;                 /* Bitter Medium */
   --font-body-weight-strong: 600;          /* Bitter SemiBold */
 
-  /* Schriftgrößen (Desktop) */
-  --size-h1: 30px;
-  --size-h2: 26px;
-  --size-h3: 22px;
+  /* Schriftgrößen (Desktop) – nachgemessen 10/2026 auf den Referenz-Sites
+     gbs-stuttgart.de und gbs-muc.de (Divi-Customizer-Overrides, beide
+     Sites identisch); vgl. TICKET-009-Befund-2, Punkt 5 */
+  --size-h1: 42px;
+  --size-h2: 36px;
+  --size-h3: 30px;
   --size-slider-title: 36px;   /* mobil 30px */
   --size-slider-text: 18px;    /* mobil 16px */
-  --size-body: 14px;
+  --size-body: 22px;           /* Fließtext; Navi 17px, Menüs/Footer 14px */
+  --size-card-title: 25px;     /* Karten-Titel (News, Themen, Kalender) */
+  --size-nav: 17px;            /* Hauptmenü-Einträge */
+  --size-meta: 14px;           /* Datum/Post-Meta, Footer-Menü */
   --size-donate-button: 22px;
 
   /* Layout */

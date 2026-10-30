@@ -32,7 +32,7 @@ section_hochschulgruppe: |
 
     Kontakt: [Scarlet Beierer](mailto:scarlet.beierer@gbs-bodensee.de)
 section_netzwerk: |
-    GBS Bodensee in den sozialen Netzen:
+    ### GBS Bodensee in den sozialen Netzen
 
     - **YouTube**: Die Videoredaktion der GBS Bodensee veröffentlicht
       Aufzeichnungen ihrer Veranstaltungen im
@@ -86,7 +86,4 @@ section_verbindungen: |
     und säkularen Organisationen und Einrichtungen der Region
     vernetzt – von der Stadt Konstanz über Hochschulgruppen bis zu
     nationalen Verbänden.
-
-    Alle Partner finden Sie im Logo-Raster auf der Seite
-    [Verbindungen](/verbindungen).
 ---
