@@ -38,6 +38,16 @@ originalen toten Links):
    als gerendertes Bild; Ursache im Entry prüfen (vermutlich
    verschachtelte/schadhafte Syntax aus der Konvertierung)
    und BEIDE Bilder korrekt einbinden.
+4. 2018-12-18.interview-mit-prof-axel-meyer-uni-konstanz.md:
+   URL `https://de.wikipedia.org/wiki/Axel_Meyer_(Biologe)` steht
+   mit ROHEN Klammern im Markdown-Link – der Parser schneidet
+   die URL bei der ersten `)` ab, der gerenderte Link ist defekt
+   (Wikipedia 404). Korrektur: Klammern IMMER percent-encodieren
+   (`%28Biologe%29`). ZUSÄTZlich: Im Teaser des Entries steht ein
+   verwaistes `)` ohne öffnende Klammer („… Axel Meyer) ver-
+   öffentlicht.") – gegen das Original korrigieren.
+   HINWEIS REGRESSION: Der 4F-Fix (Encoding) wurde durch die
+   Re-Konvertierung in Befund 5 überschrieben.
 
 ## C. Link-Report bereinigen (docs/link-check-befund-4.md)
 
@@ -58,6 +68,8 @@ Fundstellen ausgeben, Treffer gegen das Original korrigieren:
    siehe B1).
 2. Im Text geleakte Bild-/Link-Syntax („![Bild](", „](http"
    als sichtbarer Text), siehe B3.
+3. Markdown-Links mit ungecodierten Klammern ( oder ) in der
+   URL (siehe B4) – alle gegen %28/%29 encodieren.
 
 ## E. Typografie (CSS, aus Andreas' Prüfung)
 
@@ -67,6 +79,17 @@ GRÖSSER setzen (font-size erhöhen, z. B. ~1.1em), damit sie
 sich besser vom Haupttext abheben. Lead-Stil damit: fett +
 leicht größere Schrift; betrifft alle News-Detail-Seiten
 einheitlich über das Template, keine Einzelanpassungen.
+
+## F. Prozessregel: Fixes in den Konverter, nicht nur in Dateien
+
+Der Klammern-Fix aus Befund 4F ist durch die Re-Konvertierung
+verloren gegangen, weil er nur in der DATEI, nicht in der
+Konvertierungslogik saß. Künftig: Jede Korrekturregel (Klammer-
+Encoding, &shy;, Leerzeichen nach Links, Bild-Syntax, Emphasis)
+gehält als Regel IN DEN KONVERTER, damit Re-Konvertierungen
+reproduzierbar sind und Fixes nicht rückgängig werden.
+Verifikation nach jeder Re-Konvertierung: Stichproben gegen die
+Liste bereits gefixter Fehlerklassen.
 
 ## Vorgehen
 
