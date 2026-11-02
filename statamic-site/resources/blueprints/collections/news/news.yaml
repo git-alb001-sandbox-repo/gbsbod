@@ -19,6 +19,12 @@ fields:
       required: true
       display: Datum
   -
+    handle: lead
+    field:
+      type: textarea
+      display: 'Lead (erklärender Untertitel über dem Bild)'
+      instructions: 'Optional: erklärender Teil eines langen Akzent-Headers, gerendert als fetter Absatz zwischen Titel und Bild (Befund 5E). Leer lassen = nur Titel.'
+  -
     handle: teaser
     field:
       type: textarea

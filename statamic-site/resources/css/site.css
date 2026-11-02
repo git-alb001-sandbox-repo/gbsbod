@@ -101,8 +101,11 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.6em;
 }
 
-/* Kontrast-Feinschliff (TICKET-012 Befund 4E2): fetter Text dunkler als normaler Text */
+/* Kontrast-Feinschliff (TICKET-012 Befund 4E2 + 5A1): fetter Text dunkler,
+   font-weight explizit 700 – Bitter ist ein Variable Font (wght 100–900,
+   500/600-Dateien byte-identisch), 700 rendert also als echter Bold-Schnitt */
 strong, b {
+    font-weight: 700;
     color: var(--color-text-strong);
 }
 
@@ -965,27 +968,62 @@ img {
     line-height: 22.4px;
 }
 
+/* Lead: erklärender Untertitel eines langen Akzent-Headers, fett wie ein
+   Erstabsatz, aber über dem Header-Bild (Befund 5E) */
+.news-lead {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--color-text-dark);
+    margin: 0 0 18px;
+}
+
 .news-article-content {
     font-size: 18px;
     line-height: 1.6;
     letter-spacing: 0.5px;
     color: var(--color-text-dark);
     max-width: 795px;
+    hyphens: auto; /* Silbentrennung im Fließtext (Befund 5A2); <html lang="de"> ist gesetzt */
 }
 
-/* fetter Text im Meldungstext dunkler als der Fließtext (Befund 4E2) */
+/* Erstabsatz rückt direkt an das Top-Bild (Bildunterschrift, Befund 5A3) */
+.news-article-content > p:first-child {
+    margin-top: 0;
+}
+
+/* fetter Text im Meldungstext dunkler als der Fließtext (Befund 4E2/5A1) */
 .news-article-content strong,
 .news-article-content b {
+    font-weight: 700;
     color: #14262E;
 }
 
+/* Zitat-Boxen (colorbox rteright im Original): rechtsbündig und kursiv (Befund 5B1).
+   Info-Boxen (colorbox ohne rteright) bleiben als normales blockquote linksbündig (5B2) */
+.news-article-content blockquote.zitat {
+    text-align: right;
+    font-style: italic;
+}
+
 /* Detail-Bild: volle Groesse, kein Beschnitt (Befund 4D); die 8:5-Schnitt-Regel
-   gilt unveraendert fuer die KARTEN (news-card) */
+   gilt unveraendert fuer die KARTEN (news-card). Enger unterer Rand, damit eine
+   Bildunterschrift direkt am Bild steht (Befund 5A3) */
 .news-article-image {
     display: block;
     width: 100%;
     height: auto;
-    margin-block: 0 30px;
+    margin-block: 0 8px;
+}
+
+/* Bildunterschriften: figure/figcaption mit engem Abstand (Befund 5A3) */
+.news-article-content figure {
+    margin: 1.2em 0;
+}
+.news-article-content figcaption {
+    margin-top: 6px;
+    font-style: italic;
+    font-size: 0.875em;
 }
 
 /* Ueberschriften im Meldungstext: mehr Abstand nach OBEN, weniger nach UNTEN
