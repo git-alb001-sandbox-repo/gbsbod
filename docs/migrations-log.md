@@ -109,3 +109,14 @@ Keine weiteren Auffälligkeiten.
 - Einzelkorrekturen nach dem Re-Scan: Fussnoten-Link `[1]()Davis` ->
   `[1]() Davis` (konstanz-bahn-frei-…), schliessendes `*` vor Leerzeichen
   (forbidden-moves-tanzen-statt-tanzverbot, 2026-03-13).
+
+## Nachtrag TICKET-012-Befund-4 (Link-Check, Punkt F)
+
+- Automatisierter Check aller Links in allen 107 Meldungen (Bericht:
+  docs/link-check-befund-4.md): 312 eindeutige Links; 239 OK ohne Redirect,
+  Rest Redirects (technisch OK), 403 Bot-Schutz, 18x 404 und 7x nicht
+  erreichbar (kaputte Original-Links, dort als Liste dokumentiert, nicht
+  eigenmaechtig umgebaut).
+- Vor dem Check korrigiert: trailing `%20` in zwei hpd-URLs entfernt
+  (die-maske-faellt), Wikipedia-URL Axel_Meyer Klammern encodiert
+  (interview-mit-prof-axel-meyer-uni-konstanz).
