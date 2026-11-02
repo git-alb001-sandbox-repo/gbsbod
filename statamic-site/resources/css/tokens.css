@@ -12,7 +12,9 @@
   --color-primary-dark: #00282E;   /* Dunkles Petrol (lokale Akzente) */
   --color-accent: #BF3636;         /* Rot: Spenden-Button, Hover-Aktionen */
   --color-text-dark: #27424E;      /* Slider-Content, Fließtext-Akzente */
-  --color-text-base: #666666;      /* Divi-Body-Standard */
+  --color-text-base: #707070;      /* Divi-Body-Standard, leicht heller (Befund 4E2) */
+  --color-text-strong: #3F3F3F;    /* fetter Text, leicht dunkler (Befund 4E2) */
+  --color-heading: #00525F;        /* Ueberschriften, dunkleres Petrol (Befund 4E2) */
   --color-bg: #FFFFFF;
   --color-bg-gray: #F3F3F3;       /* Grau-Sections */
   --color-bg-gray-dark: #E2E2E2;

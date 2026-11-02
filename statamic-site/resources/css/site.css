@@ -97,8 +97,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
-    color: var(--color-primary);
+    color: var(--color-heading);
     margin: 0 0 0.6em;
+}
+
+/* Kontrast-Feinschliff (TICKET-012 Befund 4E2): fetter Text dunkler als normaler Text */
+strong, b {
+    color: var(--color-text-strong);
 }
 
 h1 { font-size: var(--size-h1); }
@@ -463,7 +468,7 @@ img {
 /* ------------------------------------------------------------------ */
 
 .site-footer {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary);
     color: #fff;
     margin-top: 60px;
 }
@@ -968,13 +973,49 @@ img {
     max-width: 795px;
 }
 
-/* Detail-Bild wie Karlsruhe: volle Breite, 8:5, Beschnitt per cover */
+/* fetter Text im Meldungstext dunkler als der Fließtext (Befund 4E2) */
+.news-article-content strong,
+.news-article-content b {
+    color: #14262E;
+}
+
+/* Detail-Bild: volle Groesse, kein Beschnitt (Befund 4D); die 8:5-Schnitt-Regel
+   gilt unveraendert fuer die KARTEN (news-card) */
 .news-article-image {
     display: block;
     width: 100%;
-    aspect-ratio: 8 / 5;
-    object-fit: cover;
+    height: auto;
     margin-block: 0 30px;
+}
+
+/* Ueberschriften im Meldungstext: mehr Abstand nach OBEN, weniger nach UNTEN
+   (Befund 4E3 – die Ueberschrift gehoert zum nachfolgenden Absatz) */
+.news-article-content h2,
+.news-article-content h3,
+.news-article-content h4,
+.news-article-content h5,
+.news-article-content h6 {
+    margin: 1.4em 0 0.3em;
+}
+
+/* Zitat-Kästen (Befund 4C): colorbox im Original (gbs-bodensee.de, Drupal 7) –
+   gemessen: background #c3dde1, padding 0.8em, margin 1.5em 0, font-size 0.875em */
+.news-article-content blockquote {
+    background-color: #c3dde1;
+    margin: 1.5em 0;
+    padding: 0.8em;
+    font-size: 0.875em;
+}
+.news-article-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Interview-Einzug (Befund 4B): rteindent1/2 im Original = margin-left 40/80px */
+.news-article-content .rteindent1 {
+    margin-left: 40px;
+}
+.news-article-content .rteindent2 {
+    margin-left: 80px;
 }
 
 .news-article-content img {
