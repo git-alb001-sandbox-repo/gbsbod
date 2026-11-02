@@ -987,9 +987,22 @@ img {
     hyphens: auto; /* Silbentrennung im Fließtext (Befund 5A2); <html lang="de"> ist gesetzt */
 }
 
-/* Erstabsatz rückt direkt an das Top-Bild (Bildunterschrift, Befund 5A3) */
+/* Erstabsatz rückt direkt an das Top-Bild (Bildunterschrift, Befund 5A3) und
+   wird als Lead fett + leicht groesser gesetzt (Befund 5N E); reine
+   Bildunterschriften (p.caption) bleiben kursiv/normal */
 .news-article-content > p:first-child {
     margin-top: 0;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.news-article-content > p.caption:first-child,
+.news-article-content > p:first-child:has(> em:only-child) {
+    font-size: 1em;
+    font-weight: 400;
+}
+.news-article-content p.caption {
+    font-style: italic;
+    font-size: 0.875em;
 }
 
 /* fetter Text im Meldungstext dunkler als der Fließtext (Befund 4E2/5A1) */

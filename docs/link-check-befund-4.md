@@ -106,3 +106,14 @@ Gesamt: 318 eindeutige Links (davon 22 interne).
 ## Korrigiert vor diesem Check (Befund 4F/5): trailing `%20` in zwei hpd-URLs entfernt
 (die-maske-faellt), Wikipedia-URL Axel_Meyer Klammern encodiert (%28/%29).
 
+
+## Bereinigung nach Befund 5N (C)
+
+- Bereits korrigierte URLs (hpd-Links mit trailing %20, Wikipedia-Klammer-URL
+  Axel_Meyer) sind aus der Kategorie-1-Liste entfernt – im Re-Check 2026-11-02
+  nicht mehr als 404 geführt (Wikipedia-URL mit %28/%29 liefert 200).
+- Kategorie 2 (URL-Artefakte) nach Befund 5N repariert: msu-stgt.de statt
+  kaputtem Linktext-URL, x.com Alice_Weidel statt %5C, Verwaltungsgericht-URL
+  ohne %20(-Anhang. Stuttgarter-Zeitung- und x.com-Link waren im Original bereits
+  tot – von Andreas im CP als „Linkziel existiert nicht mehr“ markiert (bef2324).
+- Kategorie 1 enthält nur noch tatsächlich offene Funde (im Original kaputt).
