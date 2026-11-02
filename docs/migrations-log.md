@@ -90,3 +90,22 @@ Keine weiteren Auffälligkeiten.
     Site (relativ): saekulare-buskampagne-2-0
   - info@gbs-bodensee.de (mailto) bleibt unverändert (E-Mail, kein
     Web-Link)
+
+## Nachtrag TICKET-012-Befund-4 (Formatierungs-Artefakte, Neu-Konvertierung)
+
+- Systematischer Scan aller 107 Entries (Scan-Report:
+  docs/scan-report-befund-4.md): 58 Entries mit sichtbaren Artefakten
+  (literale Sternchen wie `*Wort *` / `**Wann: **`, fehlendes Leerzeichen
+  nach Links, verschobene Kursivierung).
+- Alle 58 betroffenen Entries wurden gegen das Original
+  (gbs-bodensee.de/meldung/<slug>) geprueft und vollstaendig neu konvertiert
+  (HTML -> Markdown, Stil der Erstmigration; Befund-3-Linkregeln
+  mitangewendet). Re-Scan danach: 0 Treffer.
+- Interview-Format (Befund 4B): Antworten als `<p class="rteindent1">`
+  (Einzug 40px wie im Original), Sprecher-Kennzeichnung kursiv, Frage kursiv
+  – umgekehrt zum jeweiligen Absatz wie auf der alten Site.
+- Zitat-Kästen (Befund 4C): colorbox im Original -> Markdown-Blockquote,
+  Styling siehe CSS-Commit.
+- Einzelkorrekturen nach dem Re-Scan: Fussnoten-Link `[1]()Davis` ->
+  `[1]() Davis` (konstanz-bahn-frei-…), schliessendes `*` vor Leerzeichen
+  (forbidden-moves-tanzen-statt-tanzverbot, 2026-03-13).
