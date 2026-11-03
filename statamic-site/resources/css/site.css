@@ -176,26 +176,26 @@ img {
     justify-content: space-between;
     gap: 20px;
     min-height: var(--header-height);
-    padding-block: 7px; /* TICKET-014 Befund 2: Band knapp ums Logo (171 px + 2x7 px = ~185 px) */
+    padding-block: 11px; /* TICKET-014 Befund 3: 95 px Logo + 2x11 px = 117 px = Footer-Band */
     transition: min-height 0.25s ease;
 }
 
-/* Verkleinerter Header beim Scrollen (Logo 325 → 240 px breit) */
+/* Verkleinerter Header beim Scrollen (Logo 95 → 70 px hoch) */
 .site-header.is-sticky .site-header-inner {
-    min-height: 115px;
+    min-height: 92px; /* 70 px Logo + 2x11 px padding (TICKET-014 Befund 3) */
 }
 
-/* Logo-Breite x1,8 gegen Ausgangsbreite 180 px = 325 px (TICKET-013 Befund 2);
-   Höhe folgt über das Seitenverhältnis 832:438 (height:auto, keine Verzerrung) */
+/* Logo höhengesteuert wie gbs-stuttgart.de: 95 px Desktop (TICKET-014 Befund 3);
+   Breite folgt über das Seitenverhältnis (width:auto, keine Verzerrung) */
 .site-logo img {
     display: block;
-    width: 325px;
-    height: auto;
-    transition: width 0.25s ease;
+    height: 95px;
+    width: auto;
+    transition: height 0.25s ease;
 }
 
 .site-header.is-sticky .site-logo img {
-    width: 240px;
+    height: 70px;
 }
 
 .site-header-nav-wrap {
@@ -1256,9 +1256,9 @@ img {
         display: none;
     }
 
-    /* Kompromiss bis 980 px: 240 px statt 325 px, damit Navigation/CTA passen (TICKET-013 Befund 2) */
+    /* Logo-Höhe wie gbs-stuttgart.de: 80 px bis 980 px (TICKET-014 Befund 3) */
     .site-logo img {
-        width: 240px;
+        height: 80px;
     }
 
     .site-footer-inner {
@@ -1269,20 +1269,20 @@ img {
 
 @media (max-width: 767px) {
     .site-header-inner {
-        min-height: 100px;
+        min-height: 82px; /* 60 px Logo + 2x11 px padding (TICKET-014 Befund 3) */
     }
 
     .site-header.is-sticky .site-header-inner {
-        min-height: 80px;
+        min-height: 92px; /* 70 px Logo + 2x11 px padding */
     }
 
-    /* Kompromiss bis 767 px: 180 px statt 325 px, Header bricht nicht (TICKET-013 Befund 2) */
+    /* Logo-Höhe wie gbs-stuttgart.de: 60 px bis 767 px (TICKET-014 Befund 3) */
     .site-logo img {
-        width: 180px;
+        height: 60px;
     }
 
     .site-header.is-sticky .site-logo img {
-        width: 140px;
+        height: 70px;
     }
 
     /* Startseite mobil (TICKET-008): Slider kleiner, Titel 30 px, Text 16 px */
