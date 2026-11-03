@@ -171,14 +171,15 @@ img {
     transition: min-height 0.25s ease;
 }
 
-/* Verkleinerter Header beim Scrollen (Logo 100 → 70 px) */
+/* Verkleinerter Header beim Scrollen (Logo 95 → 70 px) */
 .site-header.is-sticky .site-header-inner {
     min-height: 115px;
 }
 
+/* Logo-Höhe wie gbs-stuttgart.de (Referenz): 95 px Desktop (TICKET-013 Befund 1) */
 .site-logo img {
     display: block;
-    height: 100px;
+    height: 95px;
     width: auto;
     transition: height 0.25s ease;
 }
@@ -1243,6 +1244,11 @@ img {
         display: none;
     }
 
+    /* Logo-Höhe wie gbs-stuttgart.de: 80 px bis 980 px (TICKET-013 Befund 1) */
+    .site-logo img {
+        height: 80px;
+    }
+
     .site-footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -1258,12 +1264,13 @@ img {
         min-height: 80px;
     }
 
+    /* Logo-Höhe wie gbs-stuttgart.de: 60 px bis 767 px (TICKET-013 Befund 1) */
     .site-logo img {
-        height: 70px;
+        height: 60px;
     }
 
     .site-header.is-sticky .site-logo img {
-        height: 50px;
+        height: 70px;
     }
 
     /* Startseite mobil (TICKET-008): Slider kleiner, Titel 30 px, Text 16 px */
