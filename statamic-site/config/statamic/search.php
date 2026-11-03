@@ -33,7 +33,7 @@ return [
                 'collection:themen',
                 'collection:termine',
             ],
-            'fields' => ['title', 'content'],
+            'fields' => ['title', 'content', 'teaser'],
         ],
 
     ],
