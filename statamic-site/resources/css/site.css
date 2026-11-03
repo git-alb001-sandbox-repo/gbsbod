@@ -140,6 +140,15 @@ img {
     box-sizing: border-box;
 }
 
+/* Header/Footer-Innencontainer: 88 % wie bei den RG-Referenzen
+   (gerendert 1920 px: left 115 / right 1805 = 1690 px breit, TICKET-014 Befund 1);
+   Haupt-Container (.container im Main) bleibt bei 1080 px */
+.container-wide {
+    width: 88%;
+    margin-inline: auto;
+    box-sizing: border-box;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
