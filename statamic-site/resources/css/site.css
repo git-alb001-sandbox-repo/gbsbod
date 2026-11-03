@@ -176,13 +176,13 @@ img {
     justify-content: space-between;
     gap: 20px;
     min-height: var(--header-height);
-    padding-block: 11px; /* TICKET-014 Befund 3: 95 px Logo + 2x11 px = 117 px = Footer-Band */
+    padding-block: 24px; /* TICKET-014 Befund 4: 95 px Logo + 2x24 px = 143 px = Stuttgarter Band */
     transition: min-height 0.25s ease;
 }
 
 /* Verkleinerter Header beim Scrollen (Logo 95 → 70 px hoch) */
 .site-header.is-sticky .site-header-inner {
-    min-height: 92px; /* 70 px Logo + 2x11 px padding (TICKET-014 Befund 3) */
+    min-height: var(--header-height); /* sticky-Band wie Stuttgart: 143 px, nur Logo schrumpft */
 }
 
 /* Logo höhengesteuert wie gbs-stuttgart.de: 95 px Desktop (TICKET-014 Befund 3);
@@ -1269,11 +1269,11 @@ img {
 
 @media (max-width: 767px) {
     .site-header-inner {
-        min-height: 82px; /* 60 px Logo + 2x11 px padding (TICKET-014 Befund 3) */
+        min-height: 108px; /* 60 px Logo + 2x24 px padding (TICKET-014 Befund 4) */
     }
 
     .site-header.is-sticky .site-header-inner {
-        min-height: 92px; /* 70 px Logo + 2x11 px padding */
+        min-height: var(--header-height); /* sticky mobil: Band 143 px wie Stuttgart */
     }
 
     /* Logo-Höhe wie gbs-stuttgart.de: 60 px bis 767 px (TICKET-014 Befund 3) */
