@@ -601,6 +601,11 @@ img {
     color: var(--color-accent);
 }
 
+/* Startseite: nur die ersten 3 Termine anzeigen (TICKET-016); /termine bleibt unbegrenzt */
+.section-termine .gbs-calendar-grid .teaser-row:nth-child(n+4) {
+    display: none;
+}
+
 /* ------------------------------------------------------------------ */
 /* Startseite: Hero-Slider (TICKET-008)                                */
 /* ------------------------------------------------------------------ */
