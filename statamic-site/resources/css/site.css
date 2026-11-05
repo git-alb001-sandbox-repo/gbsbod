@@ -1177,9 +1177,17 @@ img {
     border-bottom: 1px solid var(--color-bg-gray-dark);
 }
 
+/* TICKET-019: Die drei Vorsitzenden (Zeilen 1–3, positionsbasiert –
+   sie stehen im Kontakt-Global zuerst) enger untereinander */
+.kontakt-liste li:nth-child(-n+3) {
+    padding-block: 4px;
+}
+
 .kontakt-rolle {
     display: inline-block;
-    min-width: 240px;
+    /* TICKET-019: 240 → 297 px, damit hinter der längsten Rolle
+       „3. Vorsitzender (Kassier):" wieder Abstand zum Namen bleibt */
+    min-width: 297px;
     color: var(--color-text-base);
 }
 
