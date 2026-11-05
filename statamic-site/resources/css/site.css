@@ -619,6 +619,8 @@ img {
 .hero-slide {
     position: absolute;
     inset: 0;
+    display: flex;
+    align-items: center;
     opacity: 0;
     transition: opacity 0.6s ease;
     pointer-events: none;
@@ -627,52 +629,86 @@ img {
 .hero-slide.is-active {
     opacity: 1;
     pointer-events: auto;
+    z-index: 1;
 }
 
 .hero-slide-bg {
     position: absolute;
     inset: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Lesbarkeits-Overlay, damit der petrolfarbene Titel auf Fotos lesbar bleibt */
-.hero-slide-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0) 100%);
-}
-
-.hero-slide-content {
+/* TICKET-017: Optik wie Referenz-RGs (gbs-muc/stuttgart/karlsruhe, gerendert
+   gemessen): KEIN weißer Verlauf über dem Foto, sondern ein deckend weißer
+   Kasten hinter dem Textblock (rechts halbrund), der 150 px nach links ragt */
+/* Selektor mit 2 Klassen, damit .container padding-inline (ab 1350 px) nicht gewinnt */
+.hero-slide .hero-slide-content {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    max-width: 720px;
+    max-width: 795px;
+    margin-top: 50px;
+    padding: 30px 80px 40px 0;
+}
+
+.hero-slide-content::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -150px;
+    right: 0;
+    background: #fff;
+    border-radius: 0 500px 500px 0;
+}
+
+/* Einblendung wie RGs (Divi fadeBottom): 0.7s ease-in-out, 0.9s nach
+   Erscheinen des Slides; retriggert automatisch bei is-active-Wechsel */
+@keyframes hero-content-in {
+    0% { opacity: 0; transform: translateY(10%); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-slide.is-active .hero-slide-content {
+    animation: hero-content-in 0.7s ease-in-out 0.9s both;
 }
 
 .hero-slide-title {
     font-size: var(--size-slider-title);
+    font-weight: 400;
     color: var(--color-primary);
     margin: 0 0 0.4em;
 }
 
 .hero-slide-text {
     font-size: var(--size-slider-text);
+    line-height: 1.3;
     color: var(--color-text-dark);
-    margin: 0 0 1em;
+    margin: 0;
 }
 
+/* Link als Button wie RGs: weiß, 2px Petrol-Rand, halbrund */
 .hero-slide-link {
     align-self: flex-start;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5.1px 17px;
+    background: #fff;
     color: var(--color-primary);
-    font-weight: var(--font-body-weight-strong);
+    border: 2px solid var(--color-primary);
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .hero-slide-link:hover {
     color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 /* Pfeile: Hell-Petrol, Hover Rot (wie Referenz) */
@@ -1221,6 +1257,23 @@ img {
         height: 460px;
     }
 
+    /* TICKET-017 mobil wie RGs (gerendert gemessen): Text direkt auf dem Foto,
+       weiß mit Text-Schatten, weißer Kasten ausgeblendet */
+    .hero-slide-content {
+        max-width: 100%;
+        margin-top: 0;
+        padding: 15px 26.25px;
+        text-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+    }
+
+    .hero-slide-content::before {
+        display: none;
+    }
+
+    .hero-slide-text {
+        color: #fff;
+    }
+
     .main-nav {
         position: absolute;
         top: 100%;
@@ -1331,6 +1384,11 @@ img {
         font-size: 13px;
     }
 
+    /* TICKET-017: Slider-Titel sehr mobil wie RG (gerendert 375 px: 25 px, weight 500) */
+    .hero-slide-title {
+        font-size: 25px;
+        font-weight: 500;
+    }
 }
 
 @media (min-width: 1100px) {
