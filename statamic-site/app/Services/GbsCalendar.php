@@ -21,9 +21,8 @@ class GbsCalendar
     public const CACHE_KEY = 'gbs_calendar_teaser';
     public const CACHE_TTL = 900; // 15 Minuten
 
-    // TICKET-020: website_id=2 liefert das Bild-Karten-Template cal_teaser_short_gbs10
-    // (wie gbs-stuttgart.de/#termine); website_id=16 nur die Text-Variante (tpl cal_teaser_short)
-    private const ENDPOINT = 'https://gbs-termine.de/cal_teaser_short.php?action=cal_teaser_short&website_id=2';
+    // TICKET-020 Befund: website_id bleibt 16 (Bodensee-Termine)
+    private const ENDPOINT = 'https://gbs-termine.de/cal_teaser_short.php?action=cal_teaser_short&website_id=16';
 
     private const FALLBACK = '<p>Der Veranstaltungskalender ist momentan nicht erreichbar.</p>';
 
