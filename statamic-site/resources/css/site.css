@@ -554,51 +554,66 @@ img {
 }
 
 /* ------------------------------------------------------------------ */
-/* Kalender-Teaser (gbs-termine.de, TICKET-007)                         */
+/* Kalender-Teaser (gbs-termine.de, TICKET-007/020)                     */
+/* TICKET-020: Karten im Stuttgart-Format (tpl cal_teaser_short_gbs10, */
+/* gerendert gemessen an gbs-stuttgart.de/#termine, 1920px + 375px)    */
 /* ------------------------------------------------------------------ */
 
+.gbs-calendar-grid #cal-teaser-short.layout--grid-h3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -16px;
+}
+
 .gbs-calendar-grid .teaser-row {
-    padding-block: 14px;
-    border-bottom: 1px solid var(--color-bg-gray-dark);
+    flex: 0 0 calc((100% - 64px) / 3);
+    margin: 16px;
 }
 
-.gbs-calendar-grid .teaser-row.first-row {
-    padding-top: 0;
+.gbs-calendar-grid .cal--date,
+.gbs-calendar-grid .cal--location {
+    display: inline-block;
+    margin: 0 6px 0 0;
+    padding: 0 13px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 16px;
 }
 
-.gbs-calendar-grid .kalender-date {
-    margin: 0 0 4px;
-    font-size: var(--size-meta);
-    color: var(--color-text-base);
-    text-transform: uppercase;
-    letter-spacing: 0.85px;
+.gbs-calendar-grid .cal--picture {
+    width: 200px;
+    aspect-ratio: 3 / 5;
+    background-size: cover;
+    background-position: center;
 }
 
-.gbs-calendar-grid .kalender-title {
-    font-size: var(--size-card-title);
-    margin: 0 0 6px;
-}
-
-.gbs-calendar-grid .kalender-title a {
+.gbs-calendar-grid .cal--title {
+    margin: 16px 0 8px;
+    padding-bottom: 10px;
+    font-size: 22.4px;
+    font-weight: 500;
     color: var(--color-primary);
 }
 
-.gbs-calendar-grid .kalender-title a:hover {
+.gbs-calendar-grid .cal--title a {
+    color: var(--color-primary);
+}
+
+.gbs-calendar-grid .cal--title a:hover {
     color: var(--color-accent);
 }
 
-.gbs-calendar-grid .kalender-sub-title {
+.gbs-calendar-grid .cal-subtitle {
     margin: 0;
-    font-size: var(--size-body);
-    color: var(--color-text-base);
+    font-size: 18px;
+    color: var(--color-text-dark);
 }
 
-.gbs-calendar-grid .kalender-sub-title strong {
-    font-weight: var(--font-body-weight-strong);
-}
-
-.gbs-calendar-grid .read-more {
-    color: var(--color-accent);
+/* mobil: eine Karte pro Zeile (wie Stuttgart ≤980px) */
+@media (max-width: 980px) {
+    .gbs-calendar-grid .teaser-row {
+        flex-basis: 100%;
+    }
 }
 
 /* Startseite: nur die ersten 3 Termine anzeigen (TICKET-016); /termine bleibt unbegrenzt */

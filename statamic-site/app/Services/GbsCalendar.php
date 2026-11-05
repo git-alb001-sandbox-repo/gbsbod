@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 /**
- * Kalender-Teaser von gbs-termine.de (TICKET-007).
+ * Kalender-Teaser von gbs-termine.de (TICKET-007, TICKET-020).
  *
  * Portierung des WordPress-Codes von Peder (docs/kalender-api-peder.md):
  * GET mit Timeout 10 s und max. 3 Redirects, Ergebnis-HTML 15 Minuten
@@ -21,7 +21,9 @@ class GbsCalendar
     public const CACHE_KEY = 'gbs_calendar_teaser';
     public const CACHE_TTL = 900; // 15 Minuten
 
-    private const ENDPOINT = 'https://gbs-termine.de/cal_teaser_short.php?action=cal_teaser_short&website_id=16';
+    // TICKET-020: website_id=2 liefert das Bild-Karten-Template cal_teaser_short_gbs10
+    // (wie gbs-stuttgart.de/#termine); website_id=16 nur die Text-Variante (tpl cal_teaser_short)
+    private const ENDPOINT = 'https://gbs-termine.de/cal_teaser_short.php?action=cal_teaser_short&website_id=2';
 
     private const FALLBACK = '<p>Der Veranstaltungskalender ist momentan nicht erreichbar.</p>';
 
