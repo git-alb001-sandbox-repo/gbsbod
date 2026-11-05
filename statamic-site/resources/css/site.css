@@ -621,6 +621,10 @@ img {
     inset: 0;
     display: flex;
     align-items: center;
+    /* wie RGs (Divi fullwidth row, gerendert gemessen): 6 % Viewport-Breite,
+       dadurch ragt der weiße Content-Kasten (::before left:-150px) bis zum
+       linken Seitenrand */
+    padding-inline: 6%;
     opacity: 0;
     transition: opacity 0.6s ease;
     pointer-events: none;
@@ -649,7 +653,8 @@ img {
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 795px;
+    width: 795px;
+    max-width: 100%;
     margin-top: 50px;
     padding: 30px 80px 40px 0;
 }
@@ -1259,6 +1264,10 @@ img {
 
     /* TICKET-017 mobil wie RGs (gerendert gemessen): Text direkt auf dem Foto,
        weiß mit Text-Schatten, weißer Kasten ausgeblendet */
+    .hero-slide {
+        padding-inline: 0;
+    }
+
     .hero-slide-content {
         max-width: 100%;
         margin-top: 0;

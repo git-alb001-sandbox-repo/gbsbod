@@ -17,9 +17,12 @@
 | Pfeile | `#D3EFEF`, 48 px, Hover `#BF3636` | bereits identisch (TICKET-008) |
 | Dots | weiß, aktiv `#006879` | bereits identisch |
 
-Hinweis: Text-Kasten sitzt bei den RGs im Fullwidth-Row (x≈115 px bei 1920), bei gbsbod
-im 1080-px-Container – горизонтale Position weicht bewusst ab (Container-System der Site),
-Kasten-Optik (weiß, rechts halbrund, 150 px Überstand links) ist identisch.
+Position: wie RGs Fullwidth-Slide mit `padding-inline: 6 %` (gerendert: 1920→115.2 px,
+1366→82 px, 1100→66 px, exakt 6 % vw). Content-Kasten (::before `left:-150px`) ragt
+dadurch bis zum linken Seitenrand (kastenStartX −34.8 px bei 1920, am Rand abgeschnitten);
+verifiziert per Pixelprobe (x=5,y=450 = weiß). Content selbst: `width:795px` fix,
+x=115.2 px bei 1920 – identisch zur Referenz. Mobil (≤980 px): `padding-inline: 0`,
+Content volle Breite mit eigenem Padding.
 
 ## Eigen gbsbod nach Umsetzung (verifiziert, localhost:8000)
 
