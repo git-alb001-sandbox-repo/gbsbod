@@ -1,14 +1,23 @@
 slides:
   -
-    titel: 'GBS-Bodensee'
-    text: 'Regionalgruppe der Giordano-Bruno-Stiftung – Aufklärung im 21. Jahrhundert, hier am Bodensee.'
-    bild: slider/slide-01.svg
+    id: 2hTO2OoY4-_EBMoipFTJH
+    titel: 'GBS Bodensee'
+    text: 'wir sind eine Regionalgruppe der Giordano-Bruno-Stiftung, der<br> Denkfabrik für Humanismus und Aufklärung.'
+    bild: slider/250914-imperia.jpg
+    link: 'https://www.giordano-bruno-stiftung.de/'
   -
+    id: ogkaixax
     titel: 'Aufklärer werden'
-    text: 'Die meisten Aktivitäten der Regionalgruppe finden im hbbk bodensee statt. Machen Sie mit!'
-    bild: slider/slide-02.svg
-    link: 'https://hbbk-bodensee.org'
+    text: |-
+      Die meisten Aktivitäten der Regionalgruppe finden im hbbk bodensee statt.<br> 
+      Schauen Sie rein, machen Sie mit!
+    bild: slider/hbbk-hero-4.jpg
+    link: 'https://hbbk-bodensee.org/'
   -
-    titel: 'Offener Kreis'
-    text: 'Jeder kann mitmachen: Stammtisch an jedem dritten Dienstag im Monat, 19–22 Uhr.'
-    bild: slider/slide-03.svg
+    id: 2-ycYQLozvzQ0MHtTzHOC
+    titel: 'Monatlicher Stammtisch'
+    text: |-
+      Meistens im Restaurant Sedir, manchmal im hbbk.<br> 
+      Schauen Sie auf die Termine-Seite!
+    bild: slider/240114-stadtgarten-konstanz.jpg
+    link: /termine
