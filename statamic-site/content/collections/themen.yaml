@@ -1,4 +1,0 @@
-title: Themen
-route: '/themen/{slug}'
-# Themen-Einträge rendern standardmäßig mit dem themen-Template (Detailseite)
-template: themen

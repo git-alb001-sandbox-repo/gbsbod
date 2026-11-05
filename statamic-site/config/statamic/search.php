@@ -30,8 +30,6 @@ return [
             'searchables' => [
                 'collection:pages',
                 'collection:news',
-                'collection:themen',
-                'collection:termine',
             ],
             'fields' => ['title', 'content', 'teaser'],
         ],

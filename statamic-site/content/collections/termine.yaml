@@ -1,6 +1,0 @@
-title: Termine
-route: '/termine/{slug}'
-date: true
-date_behavior:
-  past: public
-  future: public

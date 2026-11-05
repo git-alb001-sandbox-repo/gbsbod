@@ -1165,41 +1165,6 @@ img {
     color: #fff;
 }
 
-/* Themen-Kacheln */
-.themen-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.themen-kachel {
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    background-color: var(--color-bg-gray);
-    border-radius: var(--button-radius);
-    border: 1px solid transparent;
-}
-
-.themen-kachel:hover {
-    border-color: var(--color-primary);
-}
-
-.themen-kachel-title {
-    font-size: var(--size-card-title);
-    margin: 0 0 8px;
-}
-
-.themen-kachel-title a,
-.themen-kachel .themen-kachel-title {
-    color: var(--color-primary);
-}
-
-.themen-kachel-text {
-    margin: 0;
-    color: var(--color-text-dark);
-}
-
 /* Kontakt-Seite */
 .kontakt-liste {
     list-style: none;
@@ -1239,11 +1204,6 @@ img {
     }
 
     .news-grid {
-        grid-template-columns: 1fr;
-        max-width: 480px;
-    }
-
-    .themen-grid {
         grid-template-columns: 1fr;
         max-width: 480px;
     }
