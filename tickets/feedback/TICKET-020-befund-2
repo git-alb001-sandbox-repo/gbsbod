@@ -1,0 +1,22 @@
+Befund TICKET-020 (LÖSUNG GEFUNDEN, Andreas 06.11.):
+
+ENDPOINT WECHSELN auf:
+https://gbs-termine.de/cal_teaser_short_gbs10.php?action=cal_teaser_short_gbs10&website_id=16
+(Bild-Variante ist eine EIGENE PHP-Datei, kein Parameter an
+cal_teaser_short.php) – liefert Bild-Karten mit BODENSEE-
+Terminen.
+
+1. ENDPOINT-Konstante im GbsCalendar-Service umstellen.
+2. ANZAHL der gelieferten Karten prüfen: Startseite genau 3
+   (Begrenzungsregel greift unverändert weiter); /termine
+   ALLE Termine – liefert der Feed nur 3, NICHT improvi-
+   sieren, sondern zurückmelden.
+3. gbs10-CSS aus 020 greift dann unverändert (für genau
+   dieses Markup gebaut und an Stuttgart vermessen);
+   news-grid-Breitenangleich mitverifizieren.
+4. Bild-Wiederholungen im HTML: byte-identische URLs prüfen
+   und im Commit dokumentieren (gleiche URL = 1 Transfer).
+5. VERIFIKATION gerendert: Startseite (3 Bild-Karten, Spalten-
+   breite = Meldungen darüber) + /termine + Mobile (1920 +
+   375 px); Bodensee-Stichprobe Titel/Ort; Screenshots in
+   docs/; Commit + push.
