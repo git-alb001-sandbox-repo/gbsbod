@@ -38,3 +38,32 @@ Deliverable ist ein 1:1 hochladbares Release-Archiv.
 AKZEPTANZ: Archiv vorhanden, entpackt als lauffähig veri-
 fiziert, Checksumme dokumentiert, Checkliste komplett, nichts
 Dev-spezifisches im Paket.
+
+Ergänzung TICKET-022 (Andreas 06.11.): In der DEPLOY-CHECK-
+LISTE.md einen Abschnitt „NACH PRODUKTIVSCHALTUNG" anlegen:
+
+A) CODE-ONLY-DEPLOYMENTS – rsync-Ausschlussliste:
+   Hochladen NUR: app/, resources/, routes/, config/,
+   public/build/, ggf. vendor/ + composer.json/lock +
+   package.json + vite.config.js
+   NIE hochladen: content/, users/, storage/,
+   public/assets/ (Live-Inhalte!)
+   Als fertige rsync-Befehle mit je einer --exclude-Zeile in
+   die Checkliste schreiben; alternativ die Code-only-Archiv-
+   Variante dokumentieren.
+
+B) INHALTS-RÜCKHOL-RUNDE (vor jedem Code-Deploy, sonst
+   regelmäßig – z. B. monatlich):
+   - Andreas lädt per SFTP vom Live-System herunter:
+     content/ + public/assets/ (fertiger SFTP-Befehl in
+     Checkliste)
+   - Übergabe an CLI → Übernahme ins Repo, Commit + push
+     (Repo bleibt dadurch vollständiges Inhalts-Backup)
+   - Merksatz prominent: „Erst Inhalte von live ins Repo,
+     dann Code von Repo auf live."
+
+C) WORKFLOW-REGEL als erster Abschnitt der Checkliste:
+   CP = Inhalte (Andreas, direkt live). Code = CLI (VM →
+   Repo → selektiver Upload). Niemals Code live editieren –
+   CSS braucht den Vite-Build, und Live-Änderungen ohne
+   Repo-Eintrag würde das nächste Deployment überschreiben.
