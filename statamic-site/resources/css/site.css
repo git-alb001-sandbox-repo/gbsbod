@@ -555,13 +555,21 @@ img {
 
 /* ------------------------------------------------------------------ */
 /* Kalender-Teaser (gbs-termine.de, TICKET-007/020)                     */
-/* TICKET-020 Befund: Raster exakt wie news-grid (3 Spalten, gap 28px) */
+/* TICKET-020 Befund Punkt 2: Raster exakt wie news-grid (3 Spalten, gap 28px).
+   Der Feed (cal_teaser_short) liefert EINEN Wrapper div.hv-calendar um alle
+   teaser-rows – das Grid muss deshalb auf dem Wrapper liegen, damit die
+   teaser-rows die Grid-Zellen sind (3 pro Zeile, Spaltenbreite = news-grid). */
 /* ------------------------------------------------------------------ */
 
-.gbs-calendar-grid {
+.gbs-calendar-grid .hv-calendar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
+}
+
+/* Clearfix-Rest des Feed-Wrappers wuerde eine leere Grid-Zelle erzeugen */
+.gbs-calendar-grid .cal-clear {
+    display: none;
 }
 
 .gbs-calendar-grid .kalender-date {
@@ -601,7 +609,7 @@ img {
 
 /* mobil: eine Spalte wie news-grid */
 @media (max-width: 980px) {
-    .gbs-calendar-grid {
+    .gbs-calendar-grid .hv-calendar {
         grid-template-columns: 1fr;
         max-width: 480px;
     }
