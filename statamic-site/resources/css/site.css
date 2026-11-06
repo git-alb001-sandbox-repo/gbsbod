@@ -555,10 +555,13 @@ img {
 
 /* ------------------------------------------------------------------ */
 /* Kalender-Teaser (gbs-termine.de, TICKET-007/020)                     */
-/* TICKET-020 Befund Punkt 2: Raster exakt wie news-grid (3 Spalten, gap 28px).
-   Der Feed (cal_teaser_short) liefert EINEN Wrapper div.hv-calendar um alle
-   teaser-rows – das Grid muss deshalb auf dem Wrapper liegen, damit die
-   teaser-rows die Grid-Zellen sind (3 pro Zeile, Spaltenbreite = news-grid). */
+/* TICKET-020 Befund-2: tpl cal_teaser_short_gbs10 (Bild-Karten).       */
+/* Der Feed liefert EINEN Wrapper div.hv-calendar (layout--grid-h3     */
+/* gbs10) um alle article.teaser-row – das Grid liegt auf dem Wrapper,  */
+/* damit die teaser-rows die Grid-Zellen sind: exakt news-grid-Logik    */
+/* (repeat(3, 1fr), gap 28px), Spaltenbreite = news-grid.               */
+/* Karten-Styles (cal--*) wie in TICKET-020 an gbs-stuttgart.de         */
+/* vermessen.                                                           */
 /* ------------------------------------------------------------------ */
 
 .gbs-calendar-grid .hv-calendar {
@@ -572,39 +575,43 @@ img {
     display: none;
 }
 
-.gbs-calendar-grid .kalender-date {
-    margin: 0 0 4px;
-    font-size: var(--size-meta);
-    color: var(--color-text-base);
-    text-transform: uppercase;
-    letter-spacing: 0.85px;
+.gbs-calendar-grid .cal--date,
+.gbs-calendar-grid .cal--location {
+    display: inline-block;
+    margin: 0 6px 0 0;
+    padding: 0 13px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 16px;
 }
 
-.gbs-calendar-grid .kalender-title {
-    font-size: var(--size-card-title);
-    margin: 0 0 6px;
+.gbs-calendar-grid .cal--picture {
+    width: 200px;
+    aspect-ratio: 3 / 5;
+    background-size: cover;
+    background-position: center;
 }
 
-.gbs-calendar-grid .kalender-title a {
+.gbs-calendar-grid .cal--title {
+    margin: 16px 0 8px;
+    padding-bottom: 10px;
+    font-size: 22.4px;
+    font-weight: 500;
     color: var(--color-primary);
 }
 
-.gbs-calendar-grid .kalender-title a:hover {
+.gbs-calendar-grid .cal--title a {
+    color: var(--color-primary);
+}
+
+.gbs-calendar-grid .cal--title a:hover {
     color: var(--color-accent);
 }
 
-.gbs-calendar-grid .kalender-sub-title {
+.gbs-calendar-grid .cal-subtitle {
     margin: 0;
-    font-size: var(--size-body);
-    color: var(--color-text-base);
-}
-
-.gbs-calendar-grid .kalender-sub-title strong {
-    font-weight: var(--font-body-weight-strong);
-}
-
-.gbs-calendar-grid .read-more {
-    color: var(--color-accent);
+    font-size: 18px;
+    color: var(--color-text-dark);
 }
 
 /* mobil: eine Spalte wie news-grid */

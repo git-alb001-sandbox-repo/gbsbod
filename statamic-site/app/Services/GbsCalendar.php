@@ -21,8 +21,9 @@ class GbsCalendar
     public const CACHE_KEY = 'gbs_calendar_teaser';
     public const CACHE_TTL = 900; // 15 Minuten
 
-    // TICKET-020 Befund: website_id bleibt 16 (Bodensee-Termine)
-    private const ENDPOINT = 'https://gbs-termine.de/cal_teaser_short.php?action=cal_teaser_short&website_id=16';
+    // TICKET-020 Befund-2: Bild-Variante ist eine eigene PHP-Datei (gbs10),
+    // website_id=16 (Bodensee-Termine)
+    private const ENDPOINT = 'https://gbs-termine.de/cal_teaser_short_gbs10.php?action=cal_teaser_short_gbs10&website_id=16';
 
     private const FALLBACK = '<p>Der Veranstaltungskalender ist momentan nicht erreichbar.</p>';
 
