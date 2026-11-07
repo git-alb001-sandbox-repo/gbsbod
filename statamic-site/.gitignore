@@ -15,6 +15,8 @@
 /auth.json
 /node_modules
 /public/build
+# Statamic-Asset-Metas (generierte .yaml-Metadaten zu Bildern)
+/public/assets/**/.meta/
 /public/fonts-manifest.dev.json
 /public/hot
 /public/static
