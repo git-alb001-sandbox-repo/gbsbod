@@ -6,3 +6,64 @@ preferences:
   collections:
     news:
       view: list
+    pages:
+      view: tree
+    verbindungen:
+      view: list
+  locale: de
+  formatting_locale: de
+  theme:
+    id: 34
+    name: 'Rose Pine'
+    colors:
+      danger: '#b4637a'
+      body-bg: '#f2e9e1'
+      gray-50: '#fffaf3'
+      primary: '#286983'
+      success: '#518c96'
+      gray-100: '#faf4ed'
+      gray-150: '#f2e9e1'
+      gray-200: '#dfdad9'
+      gray-300: '#cecacd'
+      gray-400: '#9893a5'
+      gray-500: '#797593'
+      gray-600: '#686386'
+      gray-700: '#575279'
+      gray-800: '#36324e'
+      gray-850: '#26233a'
+      gray-900: '#1f1d2e'
+      gray-925: '#1c1a29'
+      gray-950: '#191724'
+      switch-bg: '#56949f'
+      content-bg: '#faf4ed'
+      progress-bar: '#ea9d34'
+      ui-accent-bg: '#286983'
+      focus-outline: '#907aa9'
+      content-border: '#cecacd'
+      ui-accent-text: '#286983'
+      global-header-bg: '#26233a'
+      dark-danger: '#eb6f92'
+      dark-body-bg: '#191724'
+      dark-gray-50: '#efeefa'
+      dark-success: '#9ccfd8'
+      dark-gray-100: '#e0def4'
+      dark-gray-150: '#d2d0e7'
+      dark-gray-200: '#c5c2db'
+      dark-gray-300: '#aaa7c2'
+      dark-gray-400: '#908caa'
+      dark-gray-500: '#7f7b98'
+      dark-gray-600: '#6e6a86'
+      dark-gray-700: '#524f67'
+      dark-gray-800: '#403d52'
+      dark-gray-850: '#26233a'
+      dark-gray-900: '#211f32'
+      dark-gray-925: '#1f1d2e'
+      dark-gray-950: '#191724'
+      dark-switch-bg: '#56949f'
+      dark-content-bg: '#1f1d2e'
+      dark-body-border: '#191724'
+      dark-progress-bar: '#f6c177'
+      dark-focus-outline: '#ebbcba'
+      dark-content-border: '#26233a'
+      dark-ui-accent-text: '#c4a7e7'
+      dark-global-header-bg: '#191724'
