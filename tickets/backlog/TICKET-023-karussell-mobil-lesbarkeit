@@ -1,0 +1,30 @@
+# TICKET-023: Karussell mobil – Lesbarkeit auf Slide-Fotos
+
+Befund (Andreas, 07.11., IONOS-Labor, 375 px): Titel und Text
+auf den Hero-Slides mobil schlecht lesbar. Ursache aus site.css:
+1. Im Breakpoint ≤980px bekommt nur .hero-slide-text color:#fff;
+   .hero-slide-title bleibt PETROL (var(--color-primary)) –
+   dunkel auf Foto, Hauptursache.
+2. text-shadow rgba(0,0,0,0.3) 0 1px 3px für helle Bildbereiche
+   zu schwach (Lieferung stand auf .hero-slide-content, aber
+   zu dezent).
+
+Fix im ≤980px-Block (Desktop unberührt):
+1. .hero-slide-title { color: #fff; }
+2. Schatten verstärken (zweistufig), z. B.:
+   text-shadow: 0 1px 3px rgba(0,0,0,0.3),
+                0 2px 8px rgba(0,0,0,0.45);
+   – auch auf .hero-slide-link anwenden
+3. Optional robuster (Empfehlung): dezenter dunkler Scrim hinter
+   dem Content (linear-gradient rgba(0,40,46,0.5) → transparent,
+   von unten oder links), damit Lesbarkeit unabhängig von den
+   Bildinhalten steht. Design-Entscheidung mit Andreas vor
+   Umsetzung.
+
+VERIFIKATION: gerenderte Prüfung 375/479/767 px in der VM mit
+den ECHTEN drei Slide-Bildern (helle UND dunkle Bereiche prüfen);
+Desktop-Regression ausschließen; Screenshots in docs/;
+Commit + push.
+
+AKZEPTANZ: Alle drei Slides mobil klar lesbar; Desktop-Optik
+unverändert.
