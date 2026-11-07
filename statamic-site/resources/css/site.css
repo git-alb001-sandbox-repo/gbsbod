@@ -1263,19 +1263,41 @@ img {
         padding-inline: 0;
     }
 
+    /* TICKET-023: dezenter Scrim hinter dem Text, vor dem Bild –
+       Lesbarkeit unabhängig vom Bildinhalt (::before rendert vor dem
+       Content, .hero-slide-bg liegt mit z-index:-1 dahinter) */
+    .hero-slide::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 40, 46, 0.55), transparent);
+    }
+
     .hero-slide-content {
         max-width: 100%;
         margin-top: 0;
         padding: 15px 26.25px;
-        text-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+        /* TICKET-023: zweistufiger Schatten statt einfachem 0.3/3px */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3),
+            0 2px 8px rgba(0, 0, 0, 0.45);
     }
 
     .hero-slide-content::before {
         display: none;
     }
 
+    /* TICKET-023: Titel mobil weiß (war Petrol --color-primary auf dem Foto) */
+    .hero-slide-title {
+        color: #fff;
+    }
+
     .hero-slide-text {
         color: #fff;
+    }
+
+    .hero-slide-link {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3),
+            0 2px 8px rgba(0, 0, 0, 0.45);
     }
 
     .main-nav {
