@@ -75,9 +75,12 @@ rm statamic-site-release-2026-11-07.tar.gz
 ```
 cd /www/neu-gbs-bodensee            # bzw. …/statamic-site bei Variante A
 touch database/database.sqlite
-php artisan migrate --force
-php artisan storage:link
-php artisan config:clear && php artisan cache:clear
+# WICHTIG: artisan NUR mit php8.3 aufrufen – das Shell-`php` auf IONOS
+# ist eine alte Version (Webserver-PHP z. B. 8.4, siehe Kundencenter)
+php8.3 artisan migrate --force
+php8.3 artisan storage:link
+php8.3 artisan config:clear && php8.3 artisan cache:clear
+php8.3 artisan stache:clear && php8.3 artisan view:clear
 chmod -R ug+rwX storage bootstrap/cache   # Schreibrechte für den Webserver
 ```
 
@@ -109,9 +112,27 @@ Alle im Browser durchklicken (Desktop + mobil 375 px):
   IONOS-Server nicht erreichbar, zeigt `/termine` die Fallback-Anzeige →
   **Befund melden, NICHT überspielen.**
 
-## 6. NACH PRODUKTIVSCHALTUNG
+## 6. Diagnose (wenn etwas schiefgeht)
 
-### 6A. Code-only-Deployments (nach jedem Repo-Commit)
+- **Weiße Seite / 500:** zuerst `.htaccess` prüfen – auf IONOS cgi-fcgi
+  müssen `Options +SymLinksIfOwnerMatch` und `RewriteBase /` gesetzt sein
+  (sonst 500 auf allen Rewrite-Requests; live getestet 07.11.).
+- **php.ini-Muster** (Live-Vorlage von IONOS, Pfad als Platzhalter –
+  z. B. `/www/<ziel>/php.ini` bzw. über Kundencenter → PHP-Einstellungen):
+  ```ini
+  [PHP]
+  memory_limit = 512M
+  max_execution_time = 300
+  upload_max_filesize = 64M
+  post_max_size = 64M
+  session.save_path = "/tmp"
+  ```
+- **Caches:** bei seltsamen Inhalts-/Darstellungsresten
+  `php8.3 artisan stache:clear && php8.3 artisan view:clear` nachziehen.
+
+## 7. NACH PRODUKTIVSCHALTUNG
+
+### 7A. Code-only-Deployments (nach jedem Repo-Commit)
 
 Hochladen NUR Code – nie Live-Inhalte. Fertiger rsync-Befehl
 (von der VM aus; eine `--exclude`-Zeile pro Ausschluss):
@@ -147,7 +168,7 @@ tar -czf code-only.tar.gz \
 # dann: sftp/code-only.tar.gz hochladen, auf dem Server entpacken
 ```
 
-### 6B. Inhalts-Rückhol-Runde (vor jedem Code-Deploy, sonst mind. monatlich)
+### 7B. Inhalts-Rückhol-Runde (vor jedem Code-Deploy, sonst mind. monatlich)
 
 Andreas lädt per SFTP vom Live-System herunter:
 

@@ -3,7 +3,11 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    # IONOS cgi-fcgi – ohne beide Zeilen 500 auf allen Rewrite-Requests.
+    # Live getestet 07.11.
+    Options +SymLinksIfOwnerMatch
     RewriteEngine On
+    RewriteBase /
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
