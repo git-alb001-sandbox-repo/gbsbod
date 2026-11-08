@@ -2,6 +2,7 @@
 title: Datenschutzerklärung
 id: 83b07b14-9457-441d-5922-b9253a72f178
 template: datenschutz
+blueprint: page
 ---
 ## Datenschutzordnung
 

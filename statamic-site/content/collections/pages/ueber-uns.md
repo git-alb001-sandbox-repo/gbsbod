@@ -2,6 +2,7 @@
 title: 'Über uns'
 id: 8f0e7d3a-1c42-4b81-9a67-c31c0a17b1de
 template: ueber-uns
+blueprint: ueber-uns
 section_die_gbs: |
     Die gbs-Bodensee e. V. ist eine von über
     [50 Regionalgruppen](https://www.giordano-bruno-stiftung.de/aufbau/regionalgruppen){: target="_blank" rel="noopener noreferrer"}

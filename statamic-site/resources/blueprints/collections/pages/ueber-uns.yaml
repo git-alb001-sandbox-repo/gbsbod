@@ -1,0 +1,32 @@
+title: 'Über uns'
+fields:
+  -
+    handle: section_die_gbs
+    field:
+      type: markdown
+      display: 'Section "Die GBS"'
+      instructions: 'Text der ersten Section auf der Über-uns-Seite'
+      localizable: true
+      escape_markup: true
+  -
+    handle: section_hochschulgruppe
+    field:
+      type: markdown
+      display: 'Section "Hochschulgruppe"'
+      localizable: true
+      escape_markup: true
+  -
+    handle: section_netzwerk
+    field:
+      type: markdown
+      display: 'Section "Netzwerk"'
+      localizable: true
+      escape_markup: true
+  -
+    handle: section_verbindungen
+    field:
+      type: markdown
+      display: 'Section "Verbindungen" (Introtext)'
+      instructions: 'Introtext über der Verbindungsliste auf der Über-uns-Seite'
+      localizable: true
+      escape_markup: true
