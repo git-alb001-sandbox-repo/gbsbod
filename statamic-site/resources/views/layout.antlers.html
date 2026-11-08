@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ (title ?? site:name) | sanitize }}</title>
+    <title>{{ title | upper | sanitize }} - gbs Bodensee</title>
+    <link rel="icon" href="/gbs_favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/gbs_favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/gbs_favicon-180x180.png" />
     {{ vite src="resources/js/site.js|resources/css/site.css" }}
 </head>
 <body class="site-body">
