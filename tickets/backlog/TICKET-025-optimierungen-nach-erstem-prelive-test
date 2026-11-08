@@ -1,0 +1,64 @@
+# TICKET-025: Optimierungen nach erstem PreLive-Test
+
+Vier Befunde aus Andreas' Mobile-Checks + CP-Prüfung (Labor):
+
+1. KARUSSELL MOBIL – LINKER EINSCHUB: Der Slide-Text klebt am
+   linken Rand (375 px). ZIEL: Linke Kante des Slide-Texts =
+   linke Kante der Section-Überschrift "Aktuelle Meldungen"
+   darunter (gleicher Container-Einschub). Am gerenderten
+   375-px-Bild messen, die regel finden, die den Content auf 0
+   rückt, und angleichen. Desktop unverändert.
+
+2. ÜBERSCHRIFTEN SILBENTRENNUNG MOBIL: Auf /datenschutz ragt die
+   H1 "Datenschutzerklärung" rechts aus dem Viewport (375 px);
+   auch "Datenschutzordnung" darunter soll bedarfsweise
+   umbrechen. Fix nach dem etablierten Hyphenations-Prinzip
+   (hyphens: auto; lang="de" prüfen): H1 + lange
+   Unterseiten-Überschriften silbentrennen, sobald sie
+   umbrechen müssen. Gerenderte Verifikation 375/479/767:
+   nichts ragt heraus; Desktop unverändert (Trennung greift
+   nur bei Bedarf).
+
+3. KONTAKT – EINE QUELLE STATT SPLIT: IST: Pages-Entry "Kontakt"
+   trägt nur den {{ content }}-Text; die Ansprechpartner-Liste
+   rendert aus dem GLOBAL kontakt (kontakt.antlers.html:
+   {{ kontakt:ansprechpartner }}); der Global hält mehr Daten
+   (Verein/Konto), als die Seite zeigt. ZIEL (Andreas): ALLE
+   Kontaktdaten im Pages-Entry editierbar. Umsetzung:
+   - VORHER prüfen, welche Templates/Partials den Global lesen
+     (grep kontakt:), alle Stellen erfassen.
+   - Global-Felder als Blueprint-Felder des Entries aufnehmen
+     (Ansprechpartner-Replicator + Verein/Konto-Felder,
+     Markdown/Text nach Bedarf, deutsche Labels +
+     Hilfstexte).
+   - Inhalte 1:1 aus content/globals/default/kontakt.yaml in
+     den Entry übertragen.
+   - kontakt.antlers.html auf Entry-Felder umstellen.
+   - Gerenderte Seite bleibt optisch UNVERÄNDERT; alle Daten
+     sind im CP editierbar.
+   - Global kontakt danach LÖSCHEN (Definition + default/).
+   CP-Check: Entry vollständig editierbar, Global weg.
+
+4. ÜBER-UNS – CP-SICHTBARKEIT: Die vier Sektions-Texte liegen
+   bereits im Entry (section_die_gbs, section_hochschulgruppe,
+   section_netzwerk, section_verbindungen), sind aber im CP
+   unsichtbar, weil das Blueprint sie nicht definiert.
+   Umsetzung: Blueprint um die vier Markdown-Felder ergänzen
+   (z. B. eigenes Blueprint "ueber-uns" für diesen Entry,
+   deutsche Labels). KEINE Datenverschiebung – nur
+   Felddefinitionen. CP-Check: alle 4 Sektionen sichtbar +
+   editierbar; gerenderte Seite unverändert.
+
+5. VERBINDUNGEN – NUR BESTÄTIGUNG: Startseite + Über-uns
+   rendern bereits beide über {{ partial:connections }} aus
+   derselben Verbindungen-Collection (verifiziert) – EINE
+   Quelle existiert schon. Kein Umbau; im Ticket dokumentieren.
+   Der Introtext (section_verbindungen) wird mit Punkt 4
+   mit-editierbar.
+
+VERIFIKATION: gerenderte Checks 375/479/767 px (Karussell,
+Datenschutz), Desktop-Regression, CP-Checks (Kontakt-Entry
+vollständig, Global kontakt gelöscht, Über-uns-Felder sichtbar,
+Startseite/Über-uns-Verbindungen identisch), Vite-Build,
+Screenshots in docs/. Teilergebnisse sofort committen + pushen
+(Arbeitsregel).
