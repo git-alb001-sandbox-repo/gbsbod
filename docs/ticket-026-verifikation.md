@@ -19,6 +19,25 @@ News-Detail-Titel werden wie im Ticket angekündigt ebenfalls GROSS
 gerendert (einheitliches Muster) – bewusste Folge, in der manuellen
 Abnahme zu prüfen.
 
+## Befund 1 (tickets/feedback/TICKET-026-befund-1-news-titel.md)
+
+News-Detail-Titel sollen GEMISCHT bleiben (Referenz gbs-karlsruhe.de),
+nur Seiten GROSS. Umsetzung in layout.antlers.html:
+
+    <title>{{ if collection:handle == "news" }}{{ title | sanitize }}{{ else }}{{ title | upper | sanitize }}{{ /if }} - gbs Bodensee</title>
+
+Gerendert nach Fix:
+
+| URL | gerendertes `<title>` |
+|---|---|
+| `/` | `START - gbs Bodensee` |
+| `/ueber-uns` | `ÜBER UNS - gbs Bodensee` |
+| `/aktuelles` | `MELDUNGEN - gbs Bodensee` |
+| `/kontakt` | `KONTAKT - gbs Bodensee` |
+| `/termine` | `TERMINE - gbs Bodensee` |
+| `/meldung/hamed-abdel-samad-konstanz` | `Hamed Abdel-Samad in Konstanz - gbs Bodensee` |
+| `/meldung/die-wunderbruehe-aus-okinawa` | `Die Wunderbrühe aus Okinawa - gbs Bodensee` |
+
 Hinweis: Die 404-Seite rendert ` - gbs Bodensee` (kein `title` gesetzt,
 kein Fallback mehr wie zuvor auf `site:name`). Nicht Teil des Tickets;
 bei Bedarf Sonderbehandlung in einem Folge-Ticket.
