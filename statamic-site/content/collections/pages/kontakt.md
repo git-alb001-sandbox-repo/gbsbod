@@ -41,5 +41,4 @@ ansprechpartner:
     name: 'Alexander Wolber'
     email: alexander.wolber@gbs-bodensee.de
 ---
-Sie haben Fragen zur Regionalgruppe, zu unseren Veranstaltungen oder
-möchten Mitglied werden? Schreiben Sie uns – wir antworten gerne.
+Sie haben Fragen zur Regionalgruppe, zu unseren Veranstaltungen oder möchten Mitglied werden? Schreiben Sie uns – wir antworten gerne.

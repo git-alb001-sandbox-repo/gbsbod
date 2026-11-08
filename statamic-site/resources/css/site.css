@@ -999,6 +999,14 @@ img {
     padding-block: 40px 60px;
 }
 
+/* TICKET-025 Nachtrag 2: überlange unbrechbare Wörter/URLs (z. B. Linktext
+   www.youtube.com/user/gbsStuttgart) sollen erst umbrechen, wenn nötig –
+   greift nur bei Bedarf, normale Wörter unangetastet (vererbt sich auf
+   alle Inhalte/Links darunter) */
+.page, .news-article {
+    overflow-wrap: break-word;
+}
+
 .page-hint {
     color: var(--color-text-base);
 }
