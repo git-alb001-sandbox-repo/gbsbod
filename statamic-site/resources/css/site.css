@@ -99,6 +99,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     color: var(--color-heading);
     margin: 0 0 0.6em;
+    /* TICKET-025: Silbentrennung bei langen Überschriften (z. B. H1
+       "Datenschutzerklärung" auf 375 px), greift nur bei Umbruch;
+       <html lang="de"> ist gesetzt (APP_LOCALE=de) */
+    hyphens: auto;
 }
 
 /* Kontrast-Feinschliff (TICKET-012 Befund 4E2 + 5A1): fetter Text dunkler,
@@ -1273,10 +1277,15 @@ img {
         background: linear-gradient(to top, rgba(0, 40, 46, 0.55), transparent);
     }
 
-    .hero-slide-content {
+    /* TICKET-025: Selektor mit 2 Klassen wie die Basis-Regel (.hero-slide
+       .hero-slide-content), damit diese Mobil-Regel gewinnt – sonst hält die
+       Basis-Regel (padding: 30px 80px 40px 0) den linken Einschub auf 0.
+       Linke Kante des Slide-Texts = Container-Einschub (20 px) = linke Kante
+       der Section-Überschrift "Aktuelle Meldungen" darunter */
+    .hero-slide .hero-slide-content {
         max-width: 100%;
         margin-top: 0;
-        padding: 15px 26.25px;
+        padding: 15px 20px;
         /* TICKET-023: zweistufiger Schatten statt einfachem 0.3/3px */
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3),
             0 2px 8px rgba(0, 0, 0, 0.45);
