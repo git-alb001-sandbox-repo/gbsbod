@@ -1,0 +1,44 @@
+# TICKET-025 NACHTRAG: Über-uns-Seite – Restbefunde aus dem PreLive-Rundgang
+
+Andreas-Befunde aus der 025-Abnahme (Labor): (a) Sektions-
+Überschrift "Die GBS" unter der H1 soll weg; (b) der Text darüber
+bricht unnötig eng um, viel schmaler als der Sektionsbereich.
+
+DIAGNOSE (verifiziert): Kein CSS begrenzt die Breite
+(.ueber-uns-section hat nur margins, .container 1080 px). Die
+vier Markdown-Felder in pages/ueber-uns.md sind hart umbrochen
+(~55-Zeichen-Zeilen); der Renderer setzt jeden einzelnen
+Zeilenumbruch in ein <br> (auf dem Labor gerendert bestätigt).
+Beide Breiten-Befunde haben diese eine Ursache.
+
+1. TEMPLATE: In ueber-uns.antlers.html die Zeile
+   {{ partial:section-heading heading="Die GBS" }} entfernen.
+   Die erste Sektion beginnt direkt mit dem Text unter der H1
+   "Über uns". (Die Headings Hochschulgruppe / Netzwerk /
+   Verbindungen bleiben.)
+
+2. CONTENT: In pages/ueber-uns.md alle vier Felder
+   (section_die_gbs, section_hochschulgruppe, section_netzwerk,
+   section_verbindungen) in fließende Absätze umschreiben:
+   - Innerhalb eines Absatzes alle Zeilen zu EINER Zeile
+     zusammenführen – wortwörtlich, kein Zeichen ändern, nur
+     die Umbrüche zwischen Wörtern entfernen.
+   - Leerzeilen (Absatzgrenzen) beibehalten.
+   - Listen: jedes Listenelement = eine Zeile.
+   - ###-Überschriften im Netzwerk-Feld: je eigene Zeile,
+     bleiben erhalten.
+   - Links samt {: target=...}-Attributen unverändert.
+   Inhaltlich muss das Ergebnis 100 % identisch sein – nur die
+   harten Umbrüche innerhalb von Absätzen verschwinden.
+
+3. SCAN (nur berichten, NICHT fixen): Andere Pages-Entries
+   (datenschutz, impressum, kontakt, termine) auf dasselbe
+   Muster prüfen (hart umbrochene Absätze im Content-Feld) und
+   im Bericht nennen. Fixes nur nach Andreas-Freigabe.
+
+4. VERIFIKATION gerendert (1920 + 375 px): Absätze nutzen die
+   volle Sektionsbreite, keine vorzeitigen Umbrüche mehr;
+   "Die GBS" weg; Listen/Überschriften/Links/Zitate rendern
+   korrekt; Screenshots in docs/; keine andere Seite verändert.
+
+5. Vite-Build + push. Teilergebnisse sofort pushen.
