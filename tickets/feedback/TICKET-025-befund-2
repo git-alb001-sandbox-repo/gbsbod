@@ -1,0 +1,29 @@
+# TICKET-025 NACHTRAG 2: Scan-Befunde freigegeben
+
+Andreas hat freigegeben – zwei Umsetzungen:
+
+1. FLOWING-REWRITE (identische Regeln wie Nachtrag 1:
+   wortwörtlich, kein Zeichen ändern, nur Umbrüche
+   innerhalb von Absätzen entfernen):
+   - datenschutz.md: 2 hart umbrochene Absätze (7- und
+     2-zeilig) zu fließenden Absätzen (je eine Zeile).
+   - kontakt.md: Intro-Absatz (2-zeilig) zusammenführen.
+   - termine.md: Intro-Absatz (2-zeilig) zusammenführen.
+   Inhaltlich 100 % identisch mit dem heutigen Stand.
+
+2. CSS-REGEL GEGEN ÜBERLANGE UNBRECHBARE WÖRTER: Auf
+   /ueber-uns ragt der Linktext www.youtube.com/user/
+   gbsStuttgart bei 375 px auf 401 px aus dem Viewport
+   (bestand schon vor dem Nachtrag). Fix als REGEL:
+   overflow-wrap: break-word auf Seiteninhalte/Links
+   anwenden (z. B. .page und .news-article), damit
+   überlange Wörter/URLs grundsätzlich umbrechen, sobald
+   nötig (greift nur bei Bedarf, normale Wörter
+   unangetastet). Den Linktext selbst NICHT ändern.
+
+3. VERIFIKATION gerendert (1920 + 375 px): datenschutz /
+   kontakt / termine fließend breit; /ueber-uns: URL
+   bricht sauber um, nichts ragt über 375 px hinaus;
+   Screenshots in docs/.
+
+4. Vite-Build (CSS-Änderung!) + push.
