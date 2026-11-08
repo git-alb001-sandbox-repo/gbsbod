@@ -62,3 +62,43 @@ vollständig, Global kontakt gelöscht, Über-uns-Felder sichtbar,
 Startseite/Über-uns-Verbindungen identisch), Vite-Build,
 Screenshots in docs/. Teilergebnisse sofort committen + pushen
 (Arbeitsregel).
+
+---
+
+## Ergebnis (Umsetzung durch KI-Agenten)
+
+1. KARUSSELL MOBIL: Ursache war die Basis-Regel
+   `.hero-slide .hero-slide-content { padding: 30px 80px 40px 0 }`
+   (2-Klassen-Selektor), die die Mobil-Regel `.hero-slide-content`
+   (1 Klasse) immer geschlagen hat – daher stand der Text links auf 0.
+   Mobil-Regel auf `.hero-slide .hero-slide-content` angehoben und
+   `padding: 15px 20px` gesetzt: linke Kante Slide-Text = 20 px =
+   Container-Einschub = linke Kante "Aktuelle Meldungen". Desktop
+   unverändert. Screenshots: docs/ticket-025-home-375/479/767.png.
+
+2. SILBENTRENNUNG: `hyphens: auto` auf h1–h6 (greift nur bei Umbruch;
+   `<html lang="de">` über APP_LOCALE=de verifiziert). Screenshots:
+   docs/ticket-025-datenschutz-375/479/767.png.
+
+3. KONTAKT: Global `kontakt` gelöscht (content/globals/kontakt.yaml,
+   content/globals/default/kontakt.yaml, Blueprint globals/kontakt.yaml).
+   Alle Daten 1:1 in Pages-Entry kontakt.md; neues Blueprint
+   `collections/pages/kontakt` (Textfelder + Ansprechpartner-Replicator).
+   kontakt.antlers.html liest `{{ ansprechpartner }}`; impressum.antlers.html
+   liest die Vereinsdaten via `{{ collection:pages id:is=<id> }}` aus dem
+   Kontakt-Entry (grep kontakt: ergab nur diese beiden Templates).
+   Seiten gerendert verifiziert, Global in CP weg.
+   Achtung: Dadurch war resources/blueprints/collections/pages/ nicht mehr
+   leer, der Blueprint-Fallback griff nicht mehr – neues Standard-Blueprint
+   `page.yaml` angelegt und `blueprint: page` in aktuelles/datenschutz/
+   impressum/suche ergänzt (home/termine lösen über Singular-Fallback auf
+   "page" auf).
+
+4. ÜBER-UNS: Blueprint `collections/pages/ueber-uns` mit den vier
+   Markdown-Feldern; Entry auf `blueprint: ueber-uns`. Keine
+   Datenverschiebung; Seite unverändert.
+
+5. VERBINDUNGEN: bestätigt – Startseite und /ueber-uns rendern beide
+   über `{{ partial:connections }}` aus derselben Collection
+   `verbindungen`; eine Quelle. Kein Umbau. section_verbindungen ist
+   über Punkt 4 mit-editierbar.
