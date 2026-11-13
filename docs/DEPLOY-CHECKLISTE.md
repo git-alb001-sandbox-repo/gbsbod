@@ -129,6 +129,23 @@ Alle im Browser durchklicken (Desktop + mobil 375 px):
   ```
 - **Caches:** bei seltsamen Inhalts-/Darstellungsresten
   `php8.3 artisan stache:clear && php8.3 artisan view:clear` nachziehen.
+- **artisan-Befehle fehlen ("no commands defined …") / Suche aktualisiert
+  nicht von allein:** Das Shell-`php8.3` auf IONOS ist die **CGI-Binary**
+  (`php_sapi_name()` = `cgi-fcgi`; Merkmal: `Content-type: text/html`-Echo
+  nach JEDEM artisan-Output). Laravel meldet dadurch `runningInConsole() =
+  false`, und Statamic registriert seine Search-Commands dann nicht.
+  **Fix pro Aufruf (niemals in `.env`, Web-Requests dürfen keinen
+  Console-Modus melden):**
+  ```
+  APP_RUNNING_IN_CONSOLE=true php8.3 artisan statamic:search:update
+  ```
+  Produktiver Stundencron (seit 13.11.2026, TICKET-028 Befund 1):
+  ```
+  15 * * * * cd /kunden/homepages/0/d892729985/htdocs/gbs-bodensee-27/statamic-site && APP_RUNNING_IN_CONSOLE=true /usr/bin/php8.3 artisan statamic:search:update >/dev/null 2>&1
+  ```
+  Repo-seitig nutzt `routes/console.php` seit TICKET-028 Befund 1
+  `Schedule::call(fn () => \Statamic\Facades\Search::index('default')->update())->hourly()`
+  (SAPI-unabhängig, reist beim nächsten Code-Deploy mit).
 
 ## 7. NACH PRODUKTIVSCHALTUNG
 
