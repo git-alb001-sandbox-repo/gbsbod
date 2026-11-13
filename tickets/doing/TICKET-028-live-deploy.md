@@ -78,3 +78,14 @@ mit lokalem Zielpfad ausgeführt):
 
 Deploy selbst läuft in der VM durch Andreas (Schritte 1–5). Danach
 folgt Schritt 6: Vibe-Außenverifikation, dann Status done.
+
+## BEFUND 1 BEARBEITET (Vibe, 2026-11-13)
+
+tickets/feedback/TICKET-028-befund-1-suche-ionos.md – repo-seitige
+Reparaturen umgesetzt: routes/console.php auf SAPI-unabhängiges
+Schedule::call(Search::index('default')->update()) umgestellt (lokal
+verifiziert via schedule:list + Search-Update: 23x "kirche", 1x
+"Seelenfänger"), Dokus ticket-015-reindex-strategie.md und
+DEPLOY-CHECKLISTE.md um die IONOS-CGI-Realität ergänzt
+(APP_RUNNING_IN_CONSOLE=true als Präfix pro Aufruf, nie in .env).
+Commits 7806aeb + 3d8a3bc. Kein Deploy nötig für diese Änderungen.

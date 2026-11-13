@@ -49,3 +49,25 @@ Suche auffindbar, Alt-Bestand intakt (23 Treffer für "kirche").
 ## VERIFIKATION
 
 - Vibe prüft die geänderten Stellen im Repo nach CLI-Fertigstellung.
+
+## BEARBEITET (Vibe, 2026-11-13)
+
+Repo-seitige Reparaturen umgesetzt und gepusht:
+
+1. routes/console.php: `Schedule::command('search:update')->hourly()`
+   ersetzt durch
+   `Schedule::call(fn () => \Statamic\Facades\Search::index('default')->update())->hourly();`
+   (Commit 7806aeb). Lokal verifiziert: `php -l` ok,
+   `php artisan schedule:list` zeigt `0 * * * *  Closure at:
+   routes/console.php:16`, und `Search::index('default')->update()` baut
+   den Index lokal (23 Treffer "kirche", 1 Treffer "Seelenfänger").
+2. docs/ticket-015-reindex-strategie.md: IONOS-Realität ergänzt
+   (CGI-SAPI/cgi-fcgi, Content-type-Echo, runningInConsole()=false,
+   APP_RUNNING_IN_CONSOLE=true als Präfix pro Aufruf – nie in .env,
+   korrekte Crontab-Zeile vom 13.11.).
+3. docs/DEPLOY-CHECKLISTE.md, Abschnitt 6 Diagnose: IONOS-Lehre ergänzt
+   (fehlende artisan-Befehle → CGI-Binary, Präfix-Regel, Cron-Zeile,
+   Schedule::call-Hinweis). Commit 3d8a3bc.
+
+Kein Deploy nötig (IONOS-Cron unabhängig gefixt; routes/ reist beim
+nächsten Code-Deploy mit).
