@@ -64,3 +64,24 @@ FIX (beide Stellen):
 
 Ein Deploy-Rundflug für alles: 4 neue .md + Bilder (content)
 + 2 Template-Dateien (code) + stache:clear + view:clear
+
+## BEARBEITET (Vibe, 2026-11-13)
+
+Beide Punkte umgesetzt und gepusht:
+
+1. card_title gesetzt in 3 der 4 neuen Entries (nach Andreas-Vorschlag):
+   'Religionen und Wirtschaftswachstum', 'Kinderehen in
+   Baden-Württemberg', 'Sprachquoten und Verschleierungsverbot'.
+   'Seelenfänger scheitern in Karlsruhe' ohne card_title (kurz genug).
+   Zukunfts-Regel in docs/redaktions-doku.md aufgenommen.
+   Commit dd517ec.
+2. Datumsformat: news.antlers.html + partials/news-card.antlers.html
+   von {{ date format="d. M. Y" }} auf {{ date iso_format="DD. MMM[.] YYYY" }}
+   umgestellt (Carbon, Locale de) – rendert "12. Okt. 2026" statt
+   "12. Oct. 2026", führende Null wie bisher, alle Einträge.
+   Commit 4d63ea8.
+
+Verifiziert gerendert (:8000, stache:clear + view:clear): Karten
+/aktuelles mit Kurztiteln + de Datum, Detailseiten mit vollem Titel +
+de Datum, Alt-Stichprobe KI-Therapeut "12. Okt. 2026". Screenshots:
+docs/ticket-027-befund1-{aktuelles,ki-therapeut,kinderehen}-1920.png.
