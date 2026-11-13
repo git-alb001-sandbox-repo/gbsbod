@@ -68,3 +68,46 @@ der 4 existiert bereits – vor Beginn trotzdem kurz gegenprüfen
   content/collections/news/ und Bilder nach public/assets/news/
   (reine Ergänzung, keine Überschreibungen), danach stache:clear;
   der Such-Index aktualisiert sich über den Stundencron von selbst
+
+## ERLEDIGT / VERIFIKATION (Vibe, 2026-11-13)
+
+Umgesetzt und gepusht (Commit 0dfb5d4):
+
+- 4 News-Entries in content/collections/news/ (hpd-Datum = Dateiname):
+  2026-11-10.seelenfaenger-scheitern-karlsruhe.md,
+  2026-11-04.einfluss-abrahamitischen-religionen-wirtschaftswachstum.md,
+  2026-10-23.kinderehen-baden-wuerttemberg-358-faelle-nur-acht-aufhebungen.md,
+  2026-10-20.neue-sprachquoten-und-gesichtsverschleierungsverbot-an-schulen.md
+- 4 Bilder in public/assets/news/{slug}-1.jpg (1200x800; das PNG des
+  Kinderehen-Artikels nach JPEG konvertiert, Ticket-Vorgabe .jpg)
+- Format wie Muster der-ki-therapeut: UUID, teaser = erster hpd-Teaser-
+  satz, fetter Lead = vollständiger hpd-Teaser (og:description),
+  Autorenzeile **Alexander Wolber**, Fließtext ohne harte Umbrüche,
+  Links mit {: target="_blank" rel="noopener noreferrer"}, kursiv
+  Bildunterschrift mit Fotograf/CC-Credit als Link. h2 des Kinderehen-
+  Artikels als ## übernommen. Ein hpd-Tippfehler korrigiert
+  (,des Islam‘ -> ‚des Islam‘). Duplikat-Check gegen 108 Dateinamen: negativ.
+
+Verifikation (lokal gerendert, php artisan serve auf 127.0.0.1:8000,
+stache:clear durchgeführt):
+
+- /aktuelles Seite 1: 4 neue Meldungen OBEN in hpd-Reihenfolge
+  (10.11., 04.11., 23.10., 20.10.); Tag-Gleichstand 04.11. mit
+  bestehender Meldung "Die Wunderbrühe aus Okinawa" dazwischen –
+  laut Ticket-Vorgabe unbeachtlich
+- Detailseiten /meldung/{slug}: alle 4 HTTP 200, Titel korrekt
+  ("… - gbs Bodensee"), Teaser, Bild, Caption, fetter Lead,
+  Autorenzeile, h2 bei Kinderehen rendern korrekt
+- Sternchen-Artefakt-Scan über alle 4 gerenderten Seiten: 0 literale *
+  im sichtbaren Text; Emphasis (kursiv) rendert sauber
+- Silbentrennung: hyphens:auto im Build-CSS aktiv (sichtbar in Karten)
+- Link-Check (32 eindeutige URLs, curl mit Browser-UA): 31 x HTTP 200;
+  1 x 403 bei stern.de (Bot-Schutz; Artikel-Existenz via Websuche
+  verifiziert: "Italien beschließt Burka-Verbot und Sprachquote an
+  Schulen", stern.de/news/...-38305042.html). Alle Artikel-Links im
+  gerenderten HTML mit target="_blank" (wie Muster; nur Footer-Link
+  ohne target)
+- Screenshots in docs/: ticket-027-aktuelles-1920.png,
+  ticket-027-{seelenfaenger,wirtschaftswachstum,kinderehen,sprachquoten}-1920.png
+
+Status bleibt doing – Abnahme durch Andreas.
