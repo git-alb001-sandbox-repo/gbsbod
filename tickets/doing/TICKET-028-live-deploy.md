@@ -62,3 +62,19 @@ php8.3 artisan view:clear
 
 Nach Deploy Bescheid geben – Vibe prüft Status, Titel,
 Datumsformat und Suchindex von außen und schließt das Ticket.
+
+## VIBE-VERMERK (2026-11-13, vor Deploy)
+
+Runbook gegen das Repo verifiziert (lokal, Paket-Skript aus Schritt 1
+mit lokalem Zielpfad ausgeführt):
+
+- alle 10 Quelldateien existieren in statamic-site/ (4 .md, 4 .jpg,
+  2 .antlers.html)
+- cp-Skript läuft fehlerfrei; Paket enthält exakt 10 Dateien,
+  byte-identisch mit den Repo-Dateien (diff/cmp)
+- Paket-Kontrolle aus Schritt 1: grep card_title = 1, grep iso_format
+  in news-card.antlers.html = 1, in news.antlers.html = 1
+- erwartete Gegenprüfungswerte (4, 4, 1, 1) plausibel
+
+Deploy selbst läuft in der VM durch Andreas (Schritte 1–5). Danach
+folgt Schritt 6: Vibe-Außenverifikation, dann Status done.
