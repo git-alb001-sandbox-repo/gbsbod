@@ -89,3 +89,18 @@ verifiziert via schedule:list + Search-Update: 23x "kirche", 1x
 DEPLOY-CHECKLISTE.md um die IONOS-CGI-Realität ergänzt
 (APP_RUNNING_IN_CONSOLE=true als Präfix pro Aufruf, nie in .env).
 Commits 7806aeb + 3d8a3bc. Kein Deploy nötig für diese Änderungen.
+
+## VIBE-AUßENVERIFIKATION LIVE (2026-11-13, nach Deploy, gbs-bodensee.de)
+
+- /aktuelles: 4 neue Meldungen OBEN in hpd-Reihenfolge (10.11. → 20.10.)
+  mit Kurztiteln ("Religionen und Wirtschaftswachstum", "Kinderehen in
+  Baden-Württemberg", "Sprachquoten und Verschleierungsverbot") und
+  deutschem Datum ("10. Nov. 2026"); Alt-Karten ebenfalls deutsch
+  ("12. Okt. 2026", "07. Okt. 2026")
+- 4 Detailseiten /meldung/{slug}: alle HTTP 200, voller Titel (h1),
+  deutsches Datum
+- Live-Suche: q="Seelenfänger" und q="Kinderehen" liefern die neuen
+  Meldungen; q="kirche" liefert Alt-Bestand (71 Result-Elemente) →
+  Suchindex auf IONOS aktuell (Cron mit APP_RUNNING_IN_CONSOLE=true)
+
+Deploy + Suche außen verifiziert – Abnahme durch Andreas am 13.11.2026.
