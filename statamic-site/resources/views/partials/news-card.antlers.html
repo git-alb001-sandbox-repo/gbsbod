@@ -9,7 +9,7 @@
         </a>
     {{ /if }}
     <div class="news-card-body">
-        <p class="news-card-date">{{ date format="d. M. Y" }}</p>
+        <p class="news-card-date">{{ date iso_format="DD. MMM[.] YYYY" }}</p>
         <h3 class="news-card-title">
             <a href="{{ url }}">{{ if card_title }}{{ card_title }}{{ else }}{{ title }}{{ /if }}</a>
         </h3>
