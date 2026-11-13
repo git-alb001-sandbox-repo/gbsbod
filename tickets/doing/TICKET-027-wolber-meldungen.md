@@ -111,3 +111,14 @@ stache:clear durchgeführt):
   ticket-027-{seelenfaenger,wirtschaftswachstum,kinderehen,sprachquoten}-1920.png
 
 Status bleibt doing – Abnahme durch Andreas.
+
+## BEFUND 1 BEARBEITET (Vibe, 2026-11-13)
+
+tickets/feedback/TICKET-027-befund-1-kurztitel-datum.md abgearbeitet:
+- card_title in 3 der 4 neuen Entries (Commit dd517ec); Zukunfts-Regel
+  in neuer Redaktions-Doku docs/redaktions-doku.md
+- Datumsanzeige locale-de: news.antlers.html + news-card.antlers.html
+  auf {{ date iso_format="DD. MMM[.] YYYY" }} (Commit 4d63ea8) –
+  "12. Okt. 2026" statt "12. Oct. 2026", alle Einträge
+- Verifiziert gerendert + Screenshots docs/ticket-027-befund1-*.png
+  (Commit ff46cd7)
